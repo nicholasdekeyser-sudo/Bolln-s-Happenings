@@ -13,10 +13,23 @@ from zoneinfo import ZoneInfo
 SOURCE = 'https://bollnas.se/evenemang'
 OUTPUT = Path(__file__).resolve().parent / 'data' / 'events.json'
 MONTHS = dict(zip(["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"], range(1, 13)))
-('trav','Trav'), ('bandy','Bandy'), ('ishockey','Hockey'),
-('hockey','Hockey'), ('marknad','Marknad'), ('konsert','Musik'),
-('musik','Musik'), ('teater','Kultur'), ('utställning','Kultur'),
-('bio','Kultur'), ('film','Kultur'), ('barn','Familj')]
+CATEGORIES = [
+    ('loppis', 'Loppis'),
+    ('bakluck', 'Loppis'),
+    ('auktion', 'Auktion'),
+    ('trav', 'Trav'),
+    ('bandy', 'Bandy'),
+    ('ishockey', 'Hockey'),
+    ('hockey', 'Hockey'),
+    ('marknad', 'Marknad'),
+    ('konsert', 'Musik'),
+    ('musik', 'Musik'),
+    ('teater', 'Kultur'),
+    ('utställning', 'Kultur'),
+    ('bio', 'Kultur'),
+    ('film', 'Kultur'),
+    ('barn', 'Familj')
+]
 DATE_RE = re.compile(r'\bDen\s+(\d{1,2})\s+([a-zåäö]+)\s+(20\d{2})\b', re.I)
 TIME_RE = re.compile(r'\b(\d{1,2}):(\d{2})\s*[—–-]\s*(\d{1,2}):(\d{2})\b')
 def clean(text):
