@@ -12,8 +12,7 @@ from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 SOURCE = 'https://bollnas.se/evenemang'
 OUTPUT = Path(__file__).resolve().parent / 'data' / 'events.json'
-MONTHS = {name: i for i, name in enumerate('januari februari mars april maj juni juli augusti september oktober november december'.split(), 1)}
-CATEGORIES = [('loppis','Loppis'), ('bakluck','Loppis'), ('auktion','Auktion'),
+MONTHS = dict(zip(["januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december"], range(1, 13)))
 ('trav','Trav'), ('bandy','Bandy'), ('ishockey','Hockey'),
 ('hockey','Hockey'), ('marknad','Marknad'), ('konsert','Musik'),
 ('musik','Musik'), ('teater','Kultur'), ('utställning','Kultur'),
