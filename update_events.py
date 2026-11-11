@@ -131,7 +131,7 @@ events = sorted(unique.values(), key=lambda e: (e['start'], e['title']))
 print(f'Found {len(events)} dated events between {today} and {last_day}.', flush=True)
 if not events:
 raise RuntimeError("No events extracted. Refusing to overwrite events.json.")
-markup.')
+
 return events
 def main():
 events = collect()
