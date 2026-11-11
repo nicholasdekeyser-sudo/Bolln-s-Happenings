@@ -1,5 +1,5 @@
-"""Bollnäs Kalender: conservative municipal calendar HTML + JSON-LD collector.
-No fabricated events. The municipality may change its markup or paginate results.
+"""Collect verified Bollnäs municipality events for the next 14 days.
+Uses only the Python standard library. Never replaces good data with an empty list.
 """
 import datetime as dt
 import html
@@ -10,87 +10,124 @@ import re
 import urllib.request
 from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
-
 SOURCE = 'https://bollnas.se/evenemang'
-MONTHS = {'januari':1,'februari':2,'mars':3,'april':4,'maj':5,'juni':6,'juli':7,'augusti':8,'september':9,'oktober':10,'november':11,'december':12}
-CATS = [('loppis','Loppis'),('bakluck','Loppis'),('auktion','Auktion'),('trav','Trav'),('bandy','Bandy'),('hockey','Hockey'),('ishockey','Hockey'),('marknad','Marknad'),('konsert','Musik'),('musik','Musik'),('teater','Kultur'),('utställning','Kultur'),('bio','Kultur'),('film','Kultur'),('barn','Familj')]
-
+OUTPUT = Path(__file__).resolve().parent / 'data' / 'events.json'
+MONTHS = {name: i for i, name in enumerate('januari februari mars april maj juni juli augusti september
+oktober november december'.split(), 1)}
+CATEGORIES = [('loppis','Loppis'), ('bakluck','Loppis'), ('auktion','Auktion'),
+('trav','Trav'), ('bandy','Bandy'), ('ishockey','Hockey'),
+('hockey','Hockey'), ('marknad','Marknad'), ('konsert','Musik'),
+('musik','Musik'), ('teater','Kultur'), ('utställning','Kultur'),
+('bio','Kultur'), ('film','Kultur'), ('barn','Familj')]
+DATE_RE = re.compile(r'\bDen\s+(\d{1,2})\s+([a-zåäö]+)\s+(20\d{2})\b', re.I)
+TIME_RE = re.compile(r'\b(\d{1,2}):(\d{2})\s*[—–-]\s*(\d{1,2}):(\d{2})\b')
+def clean(text):
+return ' '.join(html.unescape(text or '').split())
 class CalendarParser(HTMLParser):
-    def __init__(self):
-        super().__init__(convert_charrefs=True)
-        self.heading = False
-        self.li_depth = 0
-        self.script = False
-        self.script_parts = []
-        self.json_scripts = []
-        self.events = []
-        self.current = None
-        self.li_parts = []
-    def handle_starttag(self, tag, attrs):
-        attrs = dict(attrs)
-        if tag == 'script' and attrs.get('type','').lower() == 'application/ld+json':
-            self.script = True; self.script_parts = []
-        if tag == 'h2':
-            self.heading = True
-            self.current = {'title':'','lines':[], 'url':SOURCE}
-            self.events.append(self.current)
-        if tag == 'li' and self.current:
-            self.li_depth += 1
-            if self.li_depth == 1: self.li_parts = []
-        if tag == 'a' and self.current and attrs.get('href') and self.current['url'] == SOURCE:
-            href = attrs['href']
-            if href.startswith('/') and 'evenemang' in href:
-                self.current['url'] = urljoin(SOURCE, href)
-    def handle_data(self, data):
-        if self.script: self.script_parts.append(data)
-        if self.heading and self.current: self.current['title'] += data
-        if self.li_depth and self.current: self.li_parts.append(data)
-    def handle_endtag(self, tag):
-        if tag == 'script' and self.script:
-            self.json_scripts.append(''.join(self.script_parts)); self.script = False
-        if tag == 'h2': self.heading = False
-        if tag == 'li' and self.li_depth:
-            self.li_depth -= 1
-            if self.li_depth == 0 and self.current:
-                line = ' '.join(''.join(self.li_parts).split())
-                if line: self.current['lines'].append(line)
-
-def json_events(node):
-    if isinstance(node, list):
-        for child in node: yield from json_events(child)
-    elif isinstance(node, dict):
-        kinds = node.get('@type', [])
-        if isinstance(kinds, str): kinds = [kinds]
-        if 'Event' in kinds: yield node
-        for field in ('@graph','itemListElement'):
-            yield from json_events(node.get(field, []))
-
+"""Read the municipality's event headings and their following list of details."""
+def __init__(self):
+super().__init__(convert_charrefs=True)
+self.events = []
+self.current = None
+self.heading_depth = 0
+self.li_depth = 0
+self.li_parts = []
+self.in_heading = False
+def handle_starttag(self, tag, attrs):
+attrs = dict(attrs)
+if tag == 'h2':
+self.current = {'title': '', 'lines': [], 'url': SOURCE}
+self.events.append(self.current)
+self.in_heading = True
+elif tag == 'li' and self.current is not None:
+if self.li_depth == 0:
+self.li_parts = []
+self.li_depth += 1
+elif tag == 'a' and self.current is not None and self.in_heading:
+href = attrs.get('href', '')
+if href and not href.startswith(('#', 'javascript:')):
+self.current['url'] = urljoin(SOURCE, href)
+def handle_data(self, data):
+if self.current is None:
+return
+if self.in_heading:
+self.current['title'] += data
+if self.li_depth:
+self.li_parts.append(data)
+def handle_endtag(self, tag):
+if tag == 'h2':
+self.in_heading = False
+elif tag == 'li' and self.li_depth:
+self.li_depth -= 1
+if self.li_depth == 0 and self.current is not None:
+line = clean(' '.join(self.li_parts))
+if line:
+self.current['lines'].append(line)
 def classify(title):
-    lower = title.casefold()
-    return next((category for term,category in CATS if term in lower), 'Övrigt')
-
-def clean(value):
-    return ' '.join(html.unescape(value or '').split())
-
+lower = title.casefold()
+return next((category for term, category in CATEGORIES if term in lower), 'Övrigt')
+def fetch(url):
+req = urllib.request.Request(url, headers={
+'User-Agent': 'Mozilla/5.0 (compatible; BollnasKalender/1.1; event index)',
+'Accept': 'text/html,application/xhtml+xml',
+})
+with urllib.request.urlopen(req, timeout=30) as response:
+return response.read(5_000_000).decode('utf-8', 'replace')
 def collect():
-    req = urllib.request.Request(SOURCE, headers={'User-Agent':'Mozilla/5.0 (compatible; BollnasKalender/1.0; community event index)'})
-    with urllib.request.urlopen(req, timeout=25) as response:
-        page = response.read(5_000_000).decode('utf-8','replace')
-    parser = CalendarParser(); parser.feed(page)
-    found = []
-    for item in parser.events:
-        title = clean(item['title'])
-        if not title or len(title) > 180: continue
-        lines = item['lines']
-        date_line = next((line for line in lines if re.search(r'\bDen\s+\d{1,2}\s+[a-zåäö]+\s+20\d\d',line,re.I)), None)
-        if not date_line: continue
-        match = re.search(r'\bDen\s+(\d{1,2})\s+([a-zåäö]+)\s+(20\d\d)', date_line, re.I)
-        if not match: continue
-        month = MONTHS.get(match.group(2).lower())
-        if not month: continue
-        try: day = dt.date(int(match.group(3)), month, int(match.group(1)))
-        except ValueError: continue
-        time_line = next((line for line in lines if re.search(r'\b\d\d?:\d\d\s*[—–-]\s*\d\d?:\d\d',line)), '')
-        time_match = re.search(r'(\d{1,2}:\d\d)',time_line)
-        start = day.isoformat() + ('T' + time_match.group(1).zfill(5) if time_match else 'T00:00')
-        location = next((line for line in reversed(lines) if line != date_line and line != time_line and not line.lower().startswith('den ')), '')
+page = fetch(SOURCE)
+parser = CalendarParser()
+parser.feed(page)
+print(f'Fetched {len(page)} characters; found {len(parser.events)} headings.', flush=True)
+today = dt.datetime.now(ZoneInfo('Europe/Stockholm')).date()
+last_day = today + dt.timedelta(days=13)
+found = []
+for item in parser.events:
+title = clean(item['title'])
+if not title or len(title) > 180:
+continue
+date_line = next((line for line in item['lines'] if DATE_RE.search(line)), '')
+match = DATE_RE.search(date_line)
+if not match:
+continue
+month = MONTHS.get(match.group(2).lower())
+if not month:
+continue
+try:
+day = dt.date(int(match.group(3)), month, int(match.group(1)))
+except ValueError:
+continue
+if not today <= day <= last_day:
+continue
+time_line = next((line for line in item['lines'] if TIME_RE.search(line)), '')
+time_match = TIME_RE.search(time_line)
+start_time = f'{int(time_match.group(1)):02d}:{time_match.group(2)}' if time_match else '00:00'
+end_time = f'{int(time_match.group(3)):02d}:{time_match.group(4)}' if time_match else ''
+location = next((line for line in reversed(item['lines'])
+if line != date_line and line != time_line and not DATE_RE.search(line)), '')
+found.append({
+'title': title,
+'start': f'{day.isoformat()}T{start_time}',
+'date': day.isoformat(),
+'time': start_time if time_match else '',
+'end': f'{day.isoformat()}T{end_time}' if end_time else '',
+'location': location,
+'category': classify(title),
+'url': item['url'],
+'source': SOURCE,
+})
+unique = {(e['title'], e['start'], e['location']): e for e in found}
+events = sorted(unique.values(), key=lambda e: (e['start'], e['title']))
+print(f'Found {len(events)} dated events between {today} and {last_day}.', flush=True)
+if not events:
+raise RuntimeError('No events extracted. Refusing to overwrite events.json; inspect source
+markup.')
+return events
+def main():
+events = collect()
+OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+payload = {
+'updated': dt.datetime.now(ZoneInfo('Europe/Stockholm')).isoformat(timespec='seconds'),
+'events': events,
+}
+OUTPUT.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+print(f'Saved {len(events)} events to {OUTPUT}', flush=True)
