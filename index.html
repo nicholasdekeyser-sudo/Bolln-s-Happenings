@@ -4,123 +4,189 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#153d35">
-<meta name="description" content="Evenemang i Bollnäs kommun de kommande 14 dagarna.">
+<meta name="description" content="Evenemang och aktiviteter i Bollnäs, Arbrå, Kilafors, Rengsjö och närområdet – 14 dagar framåt.">
 <link rel="manifest" href="manifest.webmanifest">
-<title>Bollnäs Kalender – 14 dagar framåt</title>
+<title>Bollnäs Kalender – evenemang och aktiviteter</title>
 <style>
-:root{color-scheme:light;--green:#153d35;--ink:#20342f;--muted:#60716b;--border:#dce5df;--bg:#f5f6f3}
+:root{color-scheme:light;--green:#153d35;--ink:#20342f;--muted:#60716b;--border:#dce5df;--bg:#f5f6f3;--accent:#0c6352}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
-header{background:var(--green);color:#fff;padding:32px max(20px,calc((100vw - 880px)/2))}
+header{background:var(--green);color:white;padding:31px max(20px,calc((100vw - 880px)/2))}
 h1{font-size:clamp(1.9rem,5vw,2.55rem);margin:0 0 4px;letter-spacing:-.035em}
-header p{margin:0;opacity:.92}
-main{max-width:920px;margin:auto;padding:24px 20px 56px}
-.toolbar{display:flex;flex-wrap:wrap;align-items:end;gap:14px;margin:0 0 14px}
-.field{display:flex;flex-direction:column;gap:5px;font-size:.92rem;font-weight:600}
-select,input{font:inherit;color:var(--ink);border:1px solid #cbd8d0;background:white;border-radius:9px;padding:10px 12px;min-height:45px}
-#search{width:min(330px,calc(100vw - 40px))}
-#status{color:var(--muted);margin:14px 0 26px;font-size:.92rem}
+header p{margin:0;opacity:.9}
+main{max-width:920px;margin:auto;padding:24px 20px 55px}
+.tabs{display:flex;gap:8px;margin:0 0 20px;flex-wrap:wrap}
+.tabs button{border:1px solid #c4d2ca;background:white;color:var(--ink);padding:11px 18px;border-radius:11px;font:inherit;font-weight:700;cursor:pointer}
+.tabs button[aria-selected=true]{background:var(--green);border-color:var(--green);color:white}
+.toolbar{display:flex;flex-wrap:wrap;align-items:end;gap:14px;margin:0 0 12px}
+.field{display:flex;flex-direction:column;gap:5px;font-size:.91rem;font-weight:600}
+select,input[type=search]{font:inherit;color:var(--ink);border:1px solid #cbd8d0;background:white;border-radius:9px;padding:10px 12px;min-height:44px}
+#search{width:min(305px,calc(100vw - 40px))}
+.checks{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin:12px 0 14px}
+.checks label{display:flex;align-items:center;gap:7px;cursor:pointer;font-size:.93rem}
+input[type=checkbox]{width:17px;height:17px;accent-color:var(--accent)}
+#status,#activityStatus{color:var(--muted);margin:14px 0 24px;font-size:.92rem}
 .day{margin:30px 0 0}
 .day-title{font-size:1.19rem;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);text-transform:capitalize}
 .event{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;background:white;border:1px solid var(--border);border-radius:13px;padding:18px;margin:10px 0;box-shadow:0 1px 2px #183d3008}
 .time{color:#1d6355;font-weight:750;font-variant-numeric:tabular-nums;padding-top:2px}
-.event h3{margin:0 0 9px;font-size:1.08rem;line-height:1.35}
-.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.89rem;margin:0 0 9px}
-.tag{background:#eef4f0;color:#27574c;border-radius:100px;padding:2px 9px;font-size:.77rem;font-weight:600}
-.event a{color:#075b49;text-underline-offset:3px;font-size:.91rem}
+.event h3,.activity h3{margin:0 0 9px;font-size:1.08rem;line-height:1.35}
+.meta{display:flex;gap:7px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.89rem;margin:0 0 9px}
+.tag{background:#eef4f0;color:#27574c;border-radius:100px;padding:2px 9px;font-size:.78rem;font-weight:600}
+.tag.free{background:#e6f3e7;color:#25613b}
+.event a,.activity a,.foot a{color:#075b49;text-underline-offset:3px;font-size:.92rem}
+.activity-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.activity{background:white;border:1px solid var(--border);border-radius:13px;padding:18px;box-shadow:0 1px 2px #183d3008}
+.activity p{font-size:.93rem;color:var(--muted);margin:7px 0}
+.activity .detail{font-size:.87rem}
 .empty{background:white;border:1px solid var(--border);border-radius:12px;padding:24px}
-.recurring{background:#fff;border:1px solid var(--border);border-radius:13px;padding:18px;margin-top:32px}.recurring h2{font-size:1.14rem;margin:0 0 9px}.recurring p{margin:7px 0;color:var(--muted)}.recurring a{color:#075b49}.footer-note{font-size:.9rem;color:var(--muted);margin-top:32px}
-.footer-note a{color:#075b49}
+.note{border-left:3px solid #92b7a8;padding:5px 13px;color:var(--muted);font-size:.87rem;margin:8px 0 18px}
+.foot{font-size:.9rem;color:var(--muted);margin-top:32px}
 footer{color:var(--muted);text-align:center;padding:20px;font-size:.85rem}
-@media(max-width:520px){main{padding:18px 14px 44px}.event{grid-template-columns:58px minmax(0,1fr);gap:10px;padding:14px}.event h3{font-size:1rem}.day{margin-top:24px}}
+[hidden]{display:none!important}
+@media(max-width:650px){main{padding:18px 14px 44px}.activity-grid{grid-template-columns:1fr}.event{grid-template-columns:58px minmax(0,1fr);gap:10px;padding:14px}.event h3{font-size:1rem}.day{margin-top:24px}.tabs button{flex:1}}
 </style>
 </head>
 <body>
-<header><h1>Bollnäs Kalender</h1><p>Vad händer i Bollnäs kommun de kommande 14 dagarna?</p></header>
+<header><h1>Bollnäs Kalender</h1><p>Evenemang och saker att göra i Bollnäs och närområdet</p></header>
 <main>
+<nav class="tabs" aria-label="Välj vy">
+<button id="tabEvents" type="button" role="tab" aria-controls="eventsView" aria-selected="true">Evenemang · 14 dagar</button>
+<button id="tabActivities" type="button" role="tab" aria-controls="activitiesView" aria-selected="false">Saker att göra</button>
+</nav>
 <div class="toolbar">
 <label class="field" for="category">Kategori
 <select id="category">
 <option value="">Alla kategorier</option>
-<option>Trav</option><option>Hockey</option><option>Bandy</option>
-<option>Sport</option><option>Musik</option><option>Kultur</option>
-<option>Familj</option><option>Loppis</option><option>Marknad</option>
-<option>Auktion</option><option>Övrigt</option>
+<option>Trav</option><option>Hockey</option><option>Bandy</option><option>Sport</option>
+<option>Musik</option><option>Kultur</option><option>Familj</option><option>Bio</option>
+<option>Natur</option><option>Loppis</option><option>Marknad</option><option>Auktion</option><option>Övrigt</option>
 </select></label>
-<label class="field" for="search">Sök evenemang
-<input id="search" type="search" placeholder="Evenemang eller plats..." autocomplete="off">
-</label>
+<label class="field" for="search">Sök
+<input id="search" type="search" placeholder="Aktivitet, evenemang eller plats…" autocomplete="off"></label>
+<label class="field" for="area" id="areaField" hidden>Område
+<select id="area"><option value="">Alla områden</option></select></label>
 </div>
+<div class="checks">
+<label id="weekendLabel"><input type="checkbox" id="weekend"> Den här helgen</label>
+<label><input type="checkbox" id="onlyFree"> Gratis</label>
+<label><input type="checkbox" id="forChildren"> För barn/familj</label>
+</div>
+<section id="eventsView" role="tabpanel" aria-labelledby="tabEvents">
 <p id="status" role="status">Laddar evenemang…</p>
 <div id="events"></div>
-<section class="recurring" aria-labelledby="recurring-heading">
-<h2 id="recurring-heading">Återkommande aktivitet för nybörjare</h2>
-<strong>Prova-på-klättring – Bollnäs Klätterklubb</strong>
-<p>Höghammarhallen · Första måndagen i månaden, med sommaruppehåll · 60 kr/person inklusive utrustning.</p>
-<p>Exakt datum och klockslag för nästa tillfälle är inte bekräftat. Kontrollera med klubben före besök.</p>
-<a href="https://bollnasklatterklubb.se/startclimbing/prova%20p%C3%A5.html" target="_blank" rel="noopener noreferrer">Klubbens information om prova-på</a>
 </section>
-<p class="footer-note">Saknas något? <a href="https://github.com/nicholasdekeyser-sudo/Bolln-s-Happenings/issues/new" target="_blank" rel="noopener">Tipsa om ett evenemang</a>.</p>
+<section id="activitiesView" role="tabpanel" aria-labelledby="tabActivities" hidden>
+<p class="note">Aktiviteterna nedan är tips, inte garanterade öppna evenemang. Kontrollera tider, bokning och pris hos arrangören. Närområdet kan även omfatta Järvsö.</p>
+<p id="activityStatus" role="status">Laddar aktiviteter…</p>
+<div id="activities" class="activity-grid"></div>
+</section>
+<p class="foot">Saknas något? <a href="https://github.com/nicholasdekeyser-sudo/Bolln-s-Happenings/issues/new" target="_blank" rel="noopener noreferrer">Tipsa om ett evenemang eller en aktivitet</a>.</p>
 </main>
-<footer>Uppgifter kan ändras. Kontrollera alltid arrangörens webbplats.</footer>
+<footer>Uppgifter kan ändras. Kontrollera alltid arrangörens information före besök.</footer>
 <script>
 if("serviceWorker" in navigator)navigator.serviceWorker.register("./sw.js");
-const container=document.getElementById("events");
-const status=document.getElementById("status");
-const category=document.getElementById("category");
-const search=document.getElementById("search");
-const daysFmt=new Intl.DateTimeFormat("sv-SE",{weekday:"long",day:"numeric",month:"long"});
+const $=id=>document.getElementById(id);
+const container=$("events"), activityContainer=$("activities");
+const category=$("category"),search=$("search"),area=$("area"),weekend=$("weekend"),onlyFree=$("onlyFree"),forChildren=$("forChildren");
+const dayFmt=new Intl.DateTimeFormat("sv-SE",{weekday:"long",day:"numeric",month:"long"});
 const updatedFmt=new Intl.DateTimeFormat("sv-SE",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Europe/Stockholm"});
-let events=[];
-let updated="";
+const FAMILY_RE=/barn|familj|allmänhetens åkning|prova.på|pyssel|lovaktivitet|sagostund/i;
+let view="events",events=[],activities=[],updated="";
 function dateKey(d){return [d.getFullYear(),String(d.getMonth()+1).padStart(2,"0"),String(d.getDate()).padStart(2,"0")].join("-")}
-function dateFromKey(key){return new Date(key+"T12:00:00")}
-function render(){
+function midday(key){return new Date(key+"T12:00:00")}
+function weekendRange(today){
+  const day=today.getDay();
+  const fridayOffset=day>=5?-(day-5):(5-day);
+  const friday=new Date(today.getFullYear(),today.getMonth(),today.getDate()+fridayOffset);
+  const monday=new Date(friday.getFullYear(),friday.getMonth(),friday.getDate()+3);
+  return [dateKey(friday),dateKey(monday)];
+}
+function matchTerm(item,term){return !term||(item.title+" "+(item.location||"")+" "+(item.area||"")+" "+(item.description||"")).toLocaleLowerCase("sv-SE").includes(term)}
+function isFreeEvent(e){return e.free===true || /^\s*gratis\b/i.test(e.title)}
+function isFamilyEvent(e){return e.family===true||e.category==="Familj"||FAMILY_RE.test(e.title)}
+function showTab(next){
+  view=next;
+  $("eventsView").hidden=next!=="events";
+  $("activitiesView").hidden=next!=="activities";
+  $("tabEvents").setAttribute("aria-selected",String(next==="events"));
+  $("tabActivities").setAttribute("aria-selected",String(next==="activities"));
+  $("weekendLabel").hidden=next!=="events";
+  $("areaField").hidden=next!=="activities";
+  render();
+}
+$("tabEvents").addEventListener("click",()=>showTab("events"));
+$("tabActivities").addEventListener("click",()=>showTab("activities"));
+function renderEvents(){
   container.replaceChildren();
-  const now=new Date();
-  const first=dateKey(now);
-  const lastDate=new Date(now.getFullYear(),now.getMonth(),now.getDate()+14);
-  const last=dateKey(lastDate);
+  const now=new Date(),first=dateKey(now),last=dateKey(new Date(now.getFullYear(),now.getMonth(),now.getDate()+14));
+  const [fri,mon]=weekendRange(now);
   const term=search.value.trim().toLocaleLowerCase("sv-SE");
-  const filtered=events.filter(e=>{
-    const day=e.date||e.start.slice(0,10);
-    return day>=first&&day<last&&(!category.value||e.category===category.value)&&
-      (!term||(e.title+" "+(e.location||"")).toLocaleLowerCase("sv-SE").includes(term));
+  const shown=events.filter(e=>{
+    const date=e.date||(e.start||"").slice(0,10);
+    return date>=first&&date<last&&(!weekend.checked||(date>=fri&&date<mon))&&
+      (!category.value||category.value===e.category)&&(!onlyFree.checked||isFreeEvent(e))&&
+      (!forChildren.checked||isFamilyEvent(e))&&matchTerm(e,term);
   }).sort((a,b)=>a.start.localeCompare(b.start)||a.title.localeCompare(b.title,"sv"));
-  let dateText="okänd";
-  if(updated){const d=new Date(updated);if(!Number.isNaN(d.getTime()))dateText=updatedFmt.format(d)}
-  status.textContent=filtered.length+" evenemang de kommande 14 dagarna · Uppdaterad "+dateText;
-  if(!filtered.length){const p=document.createElement("p");p.className="empty";p.textContent="Inga evenemang hittades. Prova en annan sökning eller kategori.";container.append(p);return}
-  let current="";
-  let section;
-  for(const e of filtered){
-    const day=e.date||e.start.slice(0,10);
+  let lastUpdate="okänd";
+  if(updated){const d=new Date(updated);if(!Number.isNaN(d.getTime()))lastUpdate=updatedFmt.format(d)}
+  $("status").textContent=shown.length+" evenemang"+(weekend.checked?" denna helg":" de kommande 14 dagarna")+" · Uppdaterad "+lastUpdate;
+  if(onlyFree.checked)$("status").textContent+=" · Bara verifierat kostnadsfria evenemang";
+  if(!shown.length){const p=document.createElement("p");p.className="empty";p.textContent="Inga evenemang hittades med de här filtren.";container.append(p);return}
+  let current="",section=null;
+  for(const e of shown){
+    const day=e.date||(e.start||"").slice(0,10);
     if(day!==current){
-      current=day;
-      section=document.createElement("section");section.className="day";
-      const heading=document.createElement("h2");heading.className="day-title";
-      heading.textContent=daysFmt.format(dateFromKey(day));
-      section.append(heading);container.append(section);
+      current=day;section=document.createElement("section");section.className="day";
+      const h=document.createElement("h2");h.className="day-title";h.textContent=dayFmt.format(midday(day));section.append(h);container.append(section);
     }
     const card=document.createElement("article");card.className="event";
-    const time=document.createElement("div");time.className="time";
-    time.textContent=e.time||"—";
+    const time=document.createElement("div");time.className="time";time.textContent=e.time||"—";
     const details=document.createElement("div");
-    const heading=document.createElement("h3");heading.textContent=e.title;
+    const h=document.createElement("h3");h.textContent=e.title;
     const meta=document.createElement("p");meta.className="meta";
-    const type=document.createElement("span");type.className="tag";type.textContent=e.category||"Övrigt";meta.append(type);
+    const tag=document.createElement("span");tag.className="tag";tag.textContent=e.category||"Övrigt";meta.append(tag);
+    if(isFreeEvent(e)){const free=document.createElement("span");free.className="tag free";free.textContent="Gratis";meta.append(free)}
     if(e.location){const place=document.createElement("span");place.textContent=e.location;meta.append(place)}
-    const link=document.createElement("a");link.href=e.url||e.source||"https://bollnas.se/evenemang";
-    link.target="_blank";link.rel="noopener noreferrer";link.textContent="Mer information";
-    details.append(heading,meta,link);card.append(time,details);section.append(card);
+    const a=document.createElement("a");a.href=e.url||e.source||"https://bollnas.se/evenemang";a.target="_blank";a.rel="noopener noreferrer";a.textContent="Mer information";
+    details.append(h,meta,a);card.append(time,details);section.append(card);
   }
 }
-category.addEventListener("change",render);
-search.addEventListener("input",render);
-fetch("data/events.json?"+Date.now(),{cache:"no-store"})
-.then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()})
-.then(data=>{events=Array.isArray(data.events)?data.events:[];updated=data.updated||"";render()})
-.catch(()=>{status.textContent="Kunde inte läsa evenemangen just nu.";container.replaceChildren()});
+function addMeta(meta,label,free){const badge=document.createElement("span");badge.className="tag"+(free?" free":"");badge.textContent=label;meta.append(badge)}
+function renderActivities(){
+  activityContainer.replaceChildren();
+  const term=search.value.trim().toLocaleLowerCase("sv-SE");
+  const shown=activities.filter(a=>(!category.value||a.category===category.value)&&
+    (!onlyFree.checked||a.free===true)&&(!forChildren.checked||a.family===true)&&
+    (!area.value||a.area===area.value)&&matchTerm(a,term)).sort((a,b)=>a.title.localeCompare(b.title,"sv"));
+  $("activityStatus").textContent=shown.length+" aktivitetstips · Kontrollera tider och villkor hos arrangören";
+  if(!shown.length){const p=document.createElement("p");p.className="empty";p.textContent="Inga aktivitetsförslag matchar filtren.";activityContainer.append(p);return}
+  for(const a of shown){
+    const card=document.createElement("article");card.className="activity";
+    const h=document.createElement("h3");h.textContent=a.title;
+    const meta=document.createElement("div");meta.className="meta";addMeta(meta,a.category);
+    if(a.free===true)addMeta(meta,"Gratis",true);
+    if(a.area)addMeta(meta,a.area);
+    const desc=document.createElement("p");desc.textContent=a.description||"";
+    const place=document.createElement("p");place.className="detail";place.textContent="Plats: "+(a.location||a.area||"Se arrangören");
+    const price=document.createElement("p");price.className="detail";price.textContent="Pris: "+(a.price||"Kontrollera pris");
+    const when=document.createElement("p");when.className="detail";when.textContent="När: "+(a.recurring||"Se aktuella tider");
+    const link=document.createElement("a");link.href=a.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent="Kontrollera hos arrangören";
+    card.append(h,meta,desc,place,price,when,link);activityContainer.append(card);
+  }
+}
+function render(){if(view==="events")renderEvents();else renderActivities()}
+[category,search,area,weekend,onlyFree,forChildren].forEach(el=>el.addEventListener(el===search?"input":"change",render));
+Promise.allSettled([
+  fetch("data/events.json?"+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()}),
+  fetch("data/activities.json?"+Date.now(),{cache:"no-store"}).then(r=>{if(!r.ok)throw Error(r.status);return r.json()})
+]).then(([a,b])=>{
+  if(a.status==="fulfilled"){events=Array.isArray(a.value.events)?a.value.events:[];updated=a.value.updated||""}
+  else $("status").textContent="Kunde inte läsa evenemangen just nu.";
+  if(b.status==="fulfilled"){activities=Array.isArray(b.value.activities)?b.value.activities:[];const areas=[...new Set(activities.map(x=>x.area).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"sv"));for(const name of areas){const option=document.createElement("option");option.value=name;option.textContent=name;area.append(option)}}
+  else $("activityStatus").textContent="Kunde inte läsa aktiviteterna just nu.";
+  render();
+});
 </script>
 </body>
 </html>
