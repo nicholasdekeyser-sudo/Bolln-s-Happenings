@@ -2,6 +2,13 @@ name: Uppdatera evenemang
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'update_events.py'
+      - 'sync_sports.py'
+      - '.github/workflows/update.yml'
+      - 'data/activities.json'
   schedule:
     - cron: '0 5 * * *'
 
