@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T10:03:06+01:00",
+  "updated": "2026-11-15T10:39:38+01:00",
   "events": [
     {
       "title": "Amaryllisutställning 2026 – En bal på slottet",
@@ -9,6 +9,8 @@
       "end": "2026-11-15T16:00",
       "location": "",
       "category": "Kultur",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/amaryllisutstallning2026enbalpaslottet.5.b2f02461a162fecb7aa94d0.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -20,6 +22,8 @@
       "end": "2026-11-15T15:30",
       "location": "Sävstaås IP",
       "category": "Sport",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-09-allmanhetens-akning-savstaas-ip",
       "source": "https://bollnas.se/evenemang"
     },
@@ -31,6 +35,8 @@
       "end": "2026-11-15T17:15",
       "location": "Mo kyrka",
       "category": "Musik",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-10-02-mass-of-the-children-och-bon-till-solen---mo-kyrka",
       "source": "https://bollnas.se/evenemang"
     },
@@ -41,7 +47,9 @@
       "time": "19:00",
       "end": "2026-11-15T20:55",
       "location": "",
-      "category": "Kultur",
+      "category": "Bio",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-ebenezer",
       "source": "https://bollnas.se/evenemang"
     },
@@ -53,6 +61,8 @@
       "end": "2026-11-16T18:00",
       "location": "",
       "category": "Kultur",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/amaryllisutstallning2026enbalpaslottet.5.b2f02461a162fecb7aa94e9.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -64,6 +74,8 @@
       "end": "2026-11-16T14:00",
       "location": "Sävstaås IP",
       "category": "Sport",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsavstaasip.5.2de5b8831a1587eab711e264.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -75,6 +87,8 @@
       "end": "2026-11-16T21:00",
       "location": "Kulturhuset Bollnäs",
       "category": "Övrigt",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/bingoikulturhuset.5.39cb05a61a0d6c86ab82abf6.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -86,6 +100,8 @@
       "end": "2026-11-17T14:30",
       "location": "SBB Arena",
       "category": "Sport",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsbbarenabandyhallen.5.2de5b8831a1587eab711cef9.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -108,6 +124,8 @@
       "end": "2026-11-17T21:30",
       "location": "",
       "category": "Musik",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-08-26-tilde-schweitzer-big-band",
       "source": "https://bollnas.se/evenemang"
     },
@@ -119,6 +137,8 @@
       "end": "2026-11-18T16:35",
       "location": "",
       "category": "Musik",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/sjungformigarja.5.73e3f2281a1a183b6619ca29.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -130,6 +150,8 @@
       "end": "2026-11-18T19:00",
       "location": "",
       "category": "Musik",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-04-bara-bach---med-bollnas-folkhogskola",
       "source": "https://bollnas.se/evenemang"
     },
@@ -141,6 +163,8 @@
       "end": "2026-11-18T19:35",
       "location": "",
       "category": "Musik",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-sjung-for-mig-arja",
       "source": "https://bollnas.se/evenemang"
     },
@@ -152,6 +176,8 @@
       "end": "2026-11-19T09:00",
       "location": "Scandic",
       "category": "Övrigt",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/arkiv/nyheter/foretagsevenemang/2025-12-11-foretagarfrukost-19-november---scandic",
       "source": "https://bollnas.se/evenemang"
     },
@@ -163,6 +189,8 @@
       "end": "2026-11-19T14:00",
       "location": "Sävstaås IP",
       "category": "Sport",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsavstaasip.5.2de5b8831a1587eab711e270.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -174,6 +202,8 @@
       "end": "2026-11-19T12:20",
       "location": "Bollnästravet",
       "category": "Trav",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-01-20-bollnastravet-lunchtrav",
       "source": "https://bollnas.se/evenemang"
     },
@@ -185,6 +215,8 @@
       "end": "2026-11-19T16:00",
       "location": "Bollnäs konsthall",
       "category": "Kultur",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-13-dino-deluxe-pa-bollnas-konsthall",
       "source": "https://bollnas.se/evenemang"
     },
@@ -196,6 +228,8 @@
       "end": "2026-11-19T14:30",
       "location": "Kulturkvarteret",
       "category": "Övrigt",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/traffpunktkulturkvarterettankenotter.5.1ea51c611a04240f3deed46d.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -207,6 +241,8 @@
       "end": "2026-11-20T14:30",
       "location": "SBB Arena",
       "category": "Sport",
+      "free": false,
+      "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsbbarenabandyhallen.5.2de5b8831a1587eab711cf05.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -229,6 +265,8 @@
       "end": "2026-11-20T21:30",
       "location": "",
       "category": "Musik",
+      "free": false,
+      "family": true,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-06-16-christmas-night",
       "source": "https://bollnas.se/evenemang"
     },
@@ -242,6 +280,45 @@
       "category": "Hockey",
       "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher",
       "source": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "title": "Dino Deluxe på Bollnäs konsthall",
+      "start": "2026-11-21T11:00",
+      "date": "2026-11-21",
+      "time": "11:00",
+      "end": "2026-11-21T14:00",
+      "location": "Bollnäs konsthall",
+      "category": "Kultur",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/dinodeluxepabollnaskonsthall.5.29f51cd61a1ce60e31518509.html",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "En kväll att minnas med - Sten & Stanley",
+      "start": "2026-11-22T18:00",
+      "date": "2026-11-22",
+      "time": "18:00",
+      "end": "2026-11-22T19:30",
+      "location": "",
+      "category": "Övrigt",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-02-24-en-kvall-att-minnas-med---sten--stanley",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Bollnäspennan: Maria Strömbäck Svärd",
+      "start": "2026-11-23T17:30",
+      "date": "2026-11-23",
+      "time": "17:30",
+      "end": "2026-11-23T19:00",
+      "location": "",
+      "category": "Musik",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-bollnaspennan-maria-stromback-svard",
+      "source": "https://bollnas.se/evenemang"
     },
     {
       "title": "Hockey: Bollnäs IS – Malungs IF",

@@ -1,5 +1,6 @@
 {
-  "note": "Verified published home fixtures. Subject to rescheduling; check source URLs.",
+  "note": "Club home fixtures checked daily. Consult club for last-minute changes.",
+  "updated": "2026-11-15T10:39:32+01:00",
   "fixtures": [
     {
       "date": "2026-11-17",
@@ -13,22 +14,6 @@
       "date": "2026-11-20",
       "time": "19:00",
       "title": "Bandy: Bollnäs GIF – Sandvikens AIK",
-      "location": "SBB Arena",
-      "category": "Bandy",
-      "url": "https://www.bollnasbandy.se/herrmatcher"
-    },
-    {
-      "date": "2026-11-27",
-      "time": "20:15",
-      "title": "Bandy: Bollnäs GIF – IK Sirius",
-      "location": "SBB Arena",
-      "category": "Bandy",
-      "url": "https://www.bollnasbandy.se/herrmatcher"
-    },
-    {
-      "date": "2026-12-04",
-      "time": "20:00",
-      "title": "Bandy: Bollnäs GIF – Broberg/Söderhamn",
       "location": "SBB Arena",
       "category": "Bandy",
       "url": "https://www.bollnasbandy.se/herrmatcher"
@@ -48,6 +33,22 @@
       "location": "Bollnäs Ishall",
       "category": "Hockey",
       "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "date": "2026-11-27",
+      "time": "20:15",
+      "title": "Bandy: Bollnäs GIF – IK Sirius",
+      "location": "SBB Arena",
+      "category": "Bandy",
+      "url": "https://www.bollnasbandy.se/herrmatcher"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:00",
+      "title": "Bandy: Bollnäs GIF – Broberg/Söderhamn",
+      "location": "SBB Arena",
+      "category": "Bandy",
+      "url": "https://www.bollnasbandy.se/herrmatcher"
     },
     {
       "date": "2026-12-11",
