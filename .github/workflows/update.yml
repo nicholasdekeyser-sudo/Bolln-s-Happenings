@@ -30,6 +30,13 @@ jobs:
       - name: Check Python syntax
         run: python -m py_compile sync_sports.py update_events.py
 
+      - name: Validate calendar data and JavaScript
+        run: |
+          python -m json.tool data/activities.json > /dev/null
+          python -m json.tool data/sports_fixtures.json > /dev/null
+          python -c "from pathlib import Path; h=Path('index.html').read_text(); Path('/tmp/bollnas-calendar.js').write_text(h.split('<script>', 1)[1].split('</script>', 1)[0])"
+          node --check /tmp/bollnas-calendar.js
+
       - name: Refresh bandy and hockey schedules
         run: python sync_sports.py
 
