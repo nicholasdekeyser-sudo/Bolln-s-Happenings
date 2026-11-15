@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T10:39:38+01:00",
+  "updated": "2026-11-15T10:40:12+01:00",
   "events": [
     {
       "title": "Amaryllisutställning 2026 – En bal på slottet",
@@ -266,7 +266,7 @@
       "location": "",
       "category": "Musik",
       "free": false,
-      "family": true,
+      "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-06-16-christmas-night",
       "source": "https://bollnas.se/evenemang"
     },
@@ -292,7 +292,7 @@
       "free": false,
       "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/dinodeluxepabollnaskonsthall.5.29f51cd61a1ce60e31518509.html",
-      "source": "https://bollnas.se/evenemang"
+      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
     },
     {
       "title": "En kväll att minnas med - Sten & Stanley",
@@ -305,7 +305,7 @@
       "free": false,
       "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-02-24-en-kvall-att-minnas-med---sten--stanley",
-      "source": "https://bollnas.se/evenemang"
+      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
     },
     {
       "title": "Bollnäspennan: Maria Strömbäck Svärd",
@@ -314,11 +314,11 @@
       "time": "17:30",
       "end": "2026-11-23T19:00",
       "location": "",
-      "category": "Musik",
+      "category": "Övrigt",
       "free": false,
       "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-bollnaspennan-maria-stromback-svard",
-      "source": "https://bollnas.se/evenemang"
+      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
     },
     {
       "title": "Hockey: Bollnäs IS – Malungs IF",
