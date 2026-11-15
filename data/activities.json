@@ -27,7 +27,7 @@
       "family": true,
       "recurring": "Under ordinarie öppettider",
       "description": "Låna exempelvis skridskor, skidor eller hjälmar och prova en ny aktivitet.",
-      "url": "https://bollnas.se/turism/upplev-bollnas/se--gora/barnens-favoriter/fritidsbanken",
+      "url": "https://bollnas.se/turism/upplev-bollnas/se--gora/aventyr-och-fritid/fritidsbanken",
       "season": "Året runt"
     },
     {
@@ -41,7 +41,7 @@
       "family": true,
       "recurring": "När banan är spelbar",
       "description": "18-hålsbana och en kortare 9-hålsbana. Ta med egen disc.",
-      "url": "https://bollnas.se/turism/upplev-bollnas/se--gora/sport--motion/discgolf",
+      "url": "https://bollnas.se/turism/upplev-bollnas/se--gora/aventyr-och-fritid/discgolf",
       "season": "Barmark"
     },
     {
@@ -55,7 +55,7 @@
       "family": true,
       "recurring": "När banan är spelbar",
       "description": "18 hål med olika längder. Discar uppges finnas att låna på plats.",
-      "url": "https://bollnas.se/turism/upplev-bollnas/se--gora/sport--motion/discgolf",
+      "url": "https://bollnas.se/turism/upplev-bollnas/se--gora/aventyr-och-fritid/discgolf",
       "season": "Barmark"
     },
     {
@@ -281,6 +281,20 @@
       "description": "Hantverk och lokala producenter vid marknader. Järvsö ligger utanför Bollnäs kommun.",
       "url": "https://stenegard.com/oppettider",
       "season": "Säsong"
+    },
+    {
+      "id": "bandykul",
+      "title": "Bandykul – skridskor för små barn",
+      "category": "Sport",
+      "area": "Bollnäs",
+      "location": "SBB Arena",
+      "price": "Kontrollera medlemskap och villkor hos klubben",
+      "free": null,
+      "family": true,
+      "recurring": "Lördagar kl. 09.30–10.30 under säsongen, bekräfta aktuella datum",
+      "description": "Bandy och skridskoåkning för barn födda 2019–2022, med hjälm och övrig skyddsutrustning.",
+      "url": "https://bollnas.se/evenemang",
+      "season": "Vinter"
     }
   ],
   "sources": [
