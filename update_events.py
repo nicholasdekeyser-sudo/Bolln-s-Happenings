@@ -87,7 +87,36 @@ class CalendarParser(HTMLParser):
 
 def classify(title):
     lower = title.casefold()
+    # Public skating is a recreational activity, even when held in the bandy arena.
+    if "allmänhetens åkning" in lower:
+        return "Sport"
+    if any(term in lower for term in (
+        "kyrkokonsert", "kör", "big band", "bach", "sjung", "julkonsert",
+        "christmas night", "mass of the children", "bön till solen",
+        "schweitzer", "musikföreställning", "sinatra", "konsert"
+    )):
+        return "Musik"
+    if any(term in lower for term in ("bingo", "företagarfrukost", "träffpunkt")):
+        return "Övrigt"
+    if any(term in lower for term in ("föreställning", "ebenezer", "teater")):
+        return "Kultur"
     return next((category for term, category in CATEGORIES if term in lower), "Övrigt")
+
+
+def location_from_title(title):
+    """Return only a venue explicitly named in the event title."""
+    lower = title.casefold()
+    known = (
+        ("sävstaås ip", "Sävstaås IP"),
+        ("sbb arena", "SBB Arena"),
+        ("mo kyrka", "Mo kyrka"),
+        ("kulturhuset", "Kulturhuset Bollnäs"),
+        ("bollnäs konsthall", "Bollnäs konsthall"),
+        ("bollnästravet", "Bollnästravet"),
+        ("kulturkvarteret", "Kulturkvarteret"),
+        ("scandic", "Scandic"),
+    )
+    return next((place for phrase, place in known if phrase in lower), "")
 
 
 def fetch(url):
@@ -147,6 +176,8 @@ def collect(page=None, today=None):
         location = next((line for line in reversed(item["lines"])
                          if line != date_line and line != time_line
                          and not DATE_RE.search(line)), "")
+        if not location:
+            location = location_from_title(title)
         # A dated interval is shown once per day; never create dates outside source interval.
         first = max(today, start_day)
         last = min(last_day, end_day)
