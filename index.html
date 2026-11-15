@@ -1,1 +1,119 @@
-<!doctype html><html lang="sv"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#153d35"><link rel="manifest" href="manifest.webmanifest"><title>Bollnäs Kalender</title><style>body{font:16px system-ui;margin:0;background:#f5f6f3;color:#172b27}header{background:#153d35;color:white;padding:24px max(20px,calc((100vw - 850px)/2))}main{max-width:850px;margin:auto;padding:20px}h1{margin:0}button,select{padding:10px;border:1px solid #ccd5d0;border-radius:9px;background:white}button{cursor:pointer}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0}.card{background:white;border:1px solid #dfe5e0;border-radius:12px;padding:16px;margin:12px 0}.muted{color:#60736d}.card a{color:#075b49}footer{padding:20px;text-align:center;color:#60736d}</style></head><body><header><h1>Bollnäs Kalender</h1><p>Vad händer i Bollnäs kommun de kommande 14 dagarna?</p></header><main><div class="filters"><label>Kategori <select id="category"><option value="">Alla</option><option>Trav</option><option>Hockey</option><option>Bandy</option><option>Sport</option><option>Musik</option><option>Kultur</option><option>Familj</option><option>Loppis</option><option>Marknad</option><option>Auktion</option><option>Övrigt</option></select></label></div><p id="status" class="muted">Laddar evenemang…</p><section id="events"></section><p>Tips om ett evenemang? <a href="https://github.com/nicholasdekeyser-sudo/Bolln-s-Happenings/issues/new" target="_blank" rel="noopener">Skicka ett tips via GitHub</a>.</p></main><footer>Uppgifter kan ändras. Kontrollera alltid arrangörens sida.</footer><script>if('serviceWorker'in navigator)navigator.serviceWorker.register('./sw.js');let events=[];const el=document.getElementById('events'),status=document.getElementById('status'),cat=document.getElementById('category');function render(){el.replaceChildren();const now=new Date();now.setHours(0,0,0,0);const end=new Date(now);end.setDate(end.getDate()+14);const filtered=events.filter(e=>{const d=new Date(e.start);return d>=now&&d<end&&(!cat.value||e.category===cat.value)}).sort((a,b)=>a.start.localeCompare(b.start));status.textContent=`${filtered.length} evenemang de kommande 14 dagarna · Senast kontrollerad: ${window.updated||'okänd'}`;if(!filtered.length){const p=document.createElement('p');p.textContent='Inga verifierade evenemang hittades i den här kategorin ännu.';el.append(p)}for(const e of filtered){const card=document.createElement('article');card.className='card';const h=document.createElement('h2');h.textContent=e.title;const p=document.createElement('p');p.className='muted';p.textContent=`${new Date(e.start).toLocaleString('sv-SE',{dateStyle:'full',timeStyle:'short'})} · ${e.location||'Plats ej angiven'} · ${e.category}`;const a=document.createElement('a');a.href=e.url;a.target='_blank';a.rel='noopener';a.textContent='Information hos arrangören';card.append(h,p,a);el.append(card)}}cat.addEventListener('change',render);fetch('data/events.json?'+Date.now()).then(r=>r.json()).then(d=>{events=d.events||[];window.updated=d.updated||'okänd';render()}).catch(()=>{status.textContent='Kunde inte läsa evenemang just nu.'});</script></body></html>
+<!doctype html>
+<html lang="sv">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#153d35">
+<meta name="description" content="Evenemang i Bollnäs kommun de kommande 14 dagarna.">
+<link rel="manifest" href="manifest.webmanifest">
+<title>Bollnäs Kalender – 14 dagar framåt</title>
+<style>
+:root{color-scheme:light;--green:#153d35;--ink:#20342f;--muted:#60716b;--border:#dce5df;--bg:#f5f6f3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,Segoe UI,sans-serif}
+header{background:var(--green);color:#fff;padding:32px max(20px,calc((100vw - 880px)/2))}
+h1{font-size:clamp(1.9rem,5vw,2.55rem);margin:0 0 4px;letter-spacing:-.035em}
+header p{margin:0;opacity:.92}
+main{max-width:920px;margin:auto;padding:24px 20px 56px}
+.toolbar{display:flex;flex-wrap:wrap;align-items:end;gap:14px;margin:0 0 14px}
+.field{display:flex;flex-direction:column;gap:5px;font-size:.92rem;font-weight:600}
+select,input{font:inherit;color:var(--ink);border:1px solid #cbd8d0;background:white;border-radius:9px;padding:10px 12px;min-height:45px}
+#search{width:min(330px,calc(100vw - 40px))}
+#status{color:var(--muted);margin:14px 0 26px;font-size:.92rem}
+.day{margin:30px 0 0}
+.day-title{font-size:1.19rem;margin:0 0 12px;padding-bottom:8px;border-bottom:2px solid var(--border);text-transform:capitalize}
+.event{display:grid;grid-template-columns:72px minmax(0,1fr);gap:16px;background:white;border:1px solid var(--border);border-radius:13px;padding:18px;margin:10px 0;box-shadow:0 1px 2px #183d3008}
+.time{color:#1d6355;font-weight:750;font-variant-numeric:tabular-nums;padding-top:2px}
+.event h3{margin:0 0 9px;font-size:1.08rem;line-height:1.35}
+.meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;color:var(--muted);font-size:.89rem;margin:0 0 9px}
+.tag{background:#eef4f0;color:#27574c;border-radius:100px;padding:2px 9px;font-size:.77rem;font-weight:600}
+.event a{color:#075b49;text-underline-offset:3px;font-size:.91rem}
+.empty{background:white;border:1px solid var(--border);border-radius:12px;padding:24px}
+.footer-note{font-size:.9rem;color:var(--muted);margin-top:32px}
+.footer-note a{color:#075b49}
+footer{color:var(--muted);text-align:center;padding:20px;font-size:.85rem}
+@media(max-width:520px){main{padding:18px 14px 44px}.event{grid-template-columns:58px minmax(0,1fr);gap:10px;padding:14px}.event h3{font-size:1rem}.day{margin-top:24px}}
+</style>
+</head>
+<body>
+<header><h1>Bollnäs Kalender</h1><p>Vad händer i Bollnäs kommun de kommande 14 dagarna?</p></header>
+<main>
+<div class="toolbar">
+<label class="field" for="category">Kategori
+<select id="category">
+<option value="">Alla kategorier</option>
+<option>Trav</option><option>Hockey</option><option>Bandy</option>
+<option>Sport</option><option>Musik</option><option>Kultur</option>
+<option>Familj</option><option>Loppis</option><option>Marknad</option>
+<option>Auktion</option><option>Övrigt</option>
+</select></label>
+<label class="field" for="search">Sök evenemang
+<input id="search" type="search" placeholder="Evenemang eller plats..." autocomplete="off">
+</label>
+</div>
+<p id="status" role="status">Laddar evenemang…</p>
+<div id="events"></div>
+<p class="footer-note">Saknas något? <a href="https://github.com/nicholasdekeyser-sudo/Bolln-s-Happenings/issues/new" target="_blank" rel="noopener">Tipsa om ett evenemang</a>.</p>
+</main>
+<footer>Uppgifter kan ändras. Kontrollera alltid arrangörens webbplats.</footer>
+<script>
+if("serviceWorker" in navigator)navigator.serviceWorker.register("./sw.js");
+const container=document.getElementById("events");
+const status=document.getElementById("status");
+const category=document.getElementById("category");
+const search=document.getElementById("search");
+const daysFmt=new Intl.DateTimeFormat("sv-SE",{weekday:"long",day:"numeric",month:"long"});
+const updatedFmt=new Intl.DateTimeFormat("sv-SE",{day:"numeric",month:"short",hour:"2-digit",minute:"2-digit",timeZone:"Europe/Stockholm"});
+let events=[];
+let updated="";
+function dateKey(d){return [d.getFullYear(),String(d.getMonth()+1).padStart(2,"0"),String(d.getDate()).padStart(2,"0")].join("-")}
+function dateFromKey(key){return new Date(key+"T12:00:00")}
+function render(){
+  container.replaceChildren();
+  const now=new Date();
+  const first=dateKey(now);
+  const lastDate=new Date(now.getFullYear(),now.getMonth(),now.getDate()+14);
+  const last=dateKey(lastDate);
+  const term=search.value.trim().toLocaleLowerCase("sv-SE");
+  const filtered=events.filter(e=>{
+    const day=e.date||e.start.slice(0,10);
+    return day>=first&&day<last&&(!category.value||e.category===category.value)&&
+      (!term||(e.title+" "+(e.location||"")).toLocaleLowerCase("sv-SE").includes(term));
+  }).sort((a,b)=>a.start.localeCompare(b.start)||a.title.localeCompare(b.title,"sv"));
+  let dateText="okänd";
+  if(updated){const d=new Date(updated);if(!Number.isNaN(d.getTime()))dateText=updatedFmt.format(d)}
+  status.textContent=filtered.length+" evenemang de kommande 14 dagarna · Uppdaterad "+dateText;
+  if(!filtered.length){const p=document.createElement("p");p.className="empty";p.textContent="Inga evenemang hittades. Prova en annan sökning eller kategori.";container.append(p);return}
+  let current="";
+  let section;
+  for(const e of filtered){
+    const day=e.date||e.start.slice(0,10);
+    if(day!==current){
+      current=day;
+      section=document.createElement("section");section.className="day";
+      const heading=document.createElement("h2");heading.className="day-title";
+      heading.textContent=daysFmt.format(dateFromKey(day));
+      section.append(heading);container.append(section);
+    }
+    const card=document.createElement("article");card.className="event";
+    const time=document.createElement("div");time.className="time";
+    time.textContent=e.time||"—";
+    const details=document.createElement("div");
+    const heading=document.createElement("h3");heading.textContent=e.title;
+    const meta=document.createElement("p");meta.className="meta";
+    const type=document.createElement("span");type.className="tag";type.textContent=e.category||"Övrigt";meta.append(type);
+    if(e.location){const place=document.createElement("span");place.textContent=e.location;meta.append(place)}
+    const link=document.createElement("a");link.href=e.url||e.source||"https://bollnas.se/evenemang";
+    link.target="_blank";link.rel="noopener noreferrer";link.textContent="Mer information";
+    details.append(heading,meta,link);card.append(time,details);section.append(card);
+  }
+}
+category.addEventListener("change",render);
+search.addEventListener("input",render);
+fetch("data/events.json?"+Date.now(),{cache:"no-store"})
+.then(r=>{if(!r.ok)throw Error("HTTP "+r.status);return r.json()})
+.then(data=>{events=Array.isArray(data.events)?data.events:[];updated=data.updated||"";render()})
+.catch(()=>{status.textContent="Kunde inte läsa evenemangen just nu.";container.replaceChildren()});
+</script>
+</body>
+</html>
