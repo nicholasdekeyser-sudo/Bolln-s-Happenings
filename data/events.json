@@ -90,15 +90,15 @@
       "source": "https://bollnas.se/evenemang"
     },
     {
-      "title": "Bandy Bollnäs - Villa/Lidköping",
+      "title": "Bandy: Bollnäs GIF – Villa Lidköping",
       "start": "2026-11-17T19:00",
       "date": "2026-11-17",
       "time": "19:00",
-      "end": "2026-11-17T21:00",
-      "location": "",
+      "end": "",
+      "location": "SBB Arena",
       "category": "Bandy",
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-02-bandy-bollnas---villa-lidkoping",
-      "source": "https://bollnas.se/evenemang"
+      "url": "https://www.bollnasbandy.se/herrmatcher",
+      "source": "https://www.bollnasbandy.se/herrmatcher"
     },
     {
       "title": "Tilde Schweitzer Big Band",
@@ -211,6 +211,17 @@
       "source": "https://bollnas.se/evenemang"
     },
     {
+      "title": "Bandy: Bollnäs GIF – Sandvikens AIK",
+      "start": "2026-11-20T19:00",
+      "date": "2026-11-20",
+      "time": "19:00",
+      "end": "",
+      "location": "SBB Arena",
+      "category": "Bandy",
+      "url": "https://www.bollnasbandy.se/herrmatcher",
+      "source": "https://www.bollnasbandy.se/herrmatcher"
+    },
+    {
       "title": "Christmas Night",
       "start": "2026-11-20T19:00",
       "date": "2026-11-20",
@@ -220,6 +231,39 @@
       "category": "Musik",
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-06-16-christmas-night",
       "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Hockey: Bollnäs IS – Ockelbo HC",
+      "start": "2026-11-20T19:00",
+      "date": "2026-11-20",
+      "time": "19:00",
+      "end": "",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher",
+      "source": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "title": "Hockey: Bollnäs IS – Malungs IF",
+      "start": "2026-11-27T19:00",
+      "date": "2026-11-27",
+      "time": "19:00",
+      "end": "",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher",
+      "source": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "title": "Bandy: Bollnäs GIF – IK Sirius",
+      "start": "2026-11-27T20:15",
+      "date": "2026-11-27",
+      "time": "20:15",
+      "end": "",
+      "location": "SBB Arena",
+      "category": "Bandy",
+      "url": "https://www.bollnasbandy.se/herrmatcher",
+      "source": "https://www.bollnasbandy.se/herrmatcher"
     }
   ]
 }
