@@ -1,0 +1,117 @@
+{
+  "note": "Verified published home fixtures. Subject to rescheduling; check source URLs.",
+  "fixtures": [
+    {
+      "date": "2026-11-17",
+      "time": "19:00",
+      "title": "Bandy: Bollnäs GIF – Villa Lidköping",
+      "location": "SBB Arena",
+      "category": "Bandy",
+      "url": "https://www.bollnasbandy.se/herrmatcher"
+    },
+    {
+      "date": "2026-11-20",
+      "time": "19:00",
+      "title": "Bandy: Bollnäs GIF – Sandvikens AIK",
+      "location": "SBB Arena",
+      "category": "Bandy",
+      "url": "https://www.bollnasbandy.se/herrmatcher"
+    },
+    {
+      "date": "2026-11-27",
+      "time": "20:15",
+      "title": "Bandy: Bollnäs GIF – IK Sirius",
+      "location": "SBB Arena",
+      "category": "Bandy",
+      "url": "https://www.bollnasbandy.se/herrmatcher"
+    },
+    {
+      "date": "2026-12-04",
+      "time": "20:00",
+      "title": "Bandy: Bollnäs GIF – Broberg/Söderhamn",
+      "location": "SBB Arena",
+      "category": "Bandy",
+      "url": "https://www.bollnasbandy.se/herrmatcher"
+    },
+    {
+      "date": "2026-11-20",
+      "time": "19:00",
+      "title": "Hockey: Bollnäs IS – Ockelbo HC",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "date": "2026-11-27",
+      "time": "19:00",
+      "title": "Hockey: Bollnäs IS – Malungs IF",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "date": "2026-12-11",
+      "time": "19:00",
+      "title": "Hockey: Bollnäs IS – Hofors HC",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "date": "2027-01-08",
+      "time": "19:00",
+      "title": "Hockey: Bollnäs IS – Orsa IK",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "date": "2027-01-15",
+      "time": "19:00",
+      "title": "Hockey: Bollnäs IS – Falu IF",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "date": "2027-01-22",
+      "time": "19:00",
+      "title": "Hockey: Bollnäs IS – Alfta Hockey",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "date": "2027-01-26",
+      "time": "19:00",
+      "title": "Hockey: Bollnäs IS – Gävle GIK",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "date": "2027-02-02",
+      "time": "19:00",
+      "title": "Hockey: Bollnäs IS – Valbo HC",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "date": "2027-02-16",
+      "time": "19:00",
+      "title": "Hockey: Bollnäs IS – Ockelbo HC",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "date": "2027-02-23",
+      "time": "19:00",
+      "title": "Hockey: Bollnäs IS – Malungs IF",
+      "location": "Bollnäs Ishall",
+      "category": "Hockey",
+      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    }
+  ]
+}
