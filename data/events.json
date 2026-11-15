@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-15T10:40:50+01:00",
+  "updated": "2026-11-15T10:41:40+01:00",
   "events": [
     {
       "title": "Amaryllisutställning 2026 – En bal på slottet",
@@ -49,7 +49,7 @@
       "location": "",
       "category": "Bio",
       "free": false,
-      "family": false,
+      "family": true,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-ebenezer",
       "source": "https://bollnas.se/evenemang"
     },
@@ -176,7 +176,7 @@
       "end": "2026-11-19T09:00",
       "location": "Scandic",
       "category": "Övrigt",
-      "free": false,
+      "free": true,
       "family": false,
       "url": "https://bollnas.se/arkiv/nyheter/foretagsevenemang/2025-12-11-foretagarfrukost-19-november---scandic",
       "source": "https://bollnas.se/evenemang"
