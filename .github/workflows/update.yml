@@ -20,6 +20,12 @@ jobs:
         with:
           python-version: '3.12'
 
+      - name: Check Python syntax
+        run: python -m py_compile sync_sports.py update_events.py
+
+      - name: Refresh bandy and hockey schedules
+        run: python sync_sports.py
+
       - name: Collect events
         run: python update_events.py
 
