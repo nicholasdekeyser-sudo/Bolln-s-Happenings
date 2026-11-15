@@ -55,15 +55,18 @@ class CalendarParser(HTMLParser):
         self.li_depth = 0
         self.li_parts = []
         self.description_parts = []
+        self.details_started = False
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == "h2":
             self.current = {"title": "", "lines": [], "url": SOURCE, "description": ""}
             self.description_parts = []
+            self.details_started = False
             self.events.append(self.current)
             self.heading_depth += 1
         elif tag == "li" and self.current is not None:
+            self.details_started = True
             if self.li_depth == 0:
                 self.li_parts = []
             self.li_depth += 1
@@ -79,7 +82,7 @@ class CalendarParser(HTMLParser):
             self.current["title"] += data
         if self.li_depth:
             self.li_parts.append(data)
-        elif not self.heading_depth:
+        elif not self.heading_depth and not self.details_started:
             self.description_parts.append(data)
             if len(self.description_parts) > 2000:
                 self.description_parts = self.description_parts[-1000:]
@@ -173,6 +176,7 @@ def collect(page=None, today=None):
         parser = CalendarParser()
         parser.feed(markup)
         for item in parser.events:
+            item["source"] = url
             if item["url"] == SOURCE:
                 item["url"] = url
             items.append(item)
@@ -226,7 +230,7 @@ def collect(page=None, today=None):
                 "free": bool(re.search(r"\b(?:fri entré|fritt inträde|gratis|kostnadsfri\w*)\b", description, re.I)),
                 "family": bool(re.search(r"\b(?:för hela familjen|barnfamiljer|för barn|familjeföreställning|barnaktiviteter|från \d+ år)\b", description, re.I)),
                 "url": item["url"],
-                "source": item["url"] if item["url"] in ADDITIONAL_SOURCES else SOURCE,
+                "source": item.get("source", SOURCE),
             })
 
     # Add verified home games from club fixture calendars. They are maintained
