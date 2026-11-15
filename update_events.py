@@ -15,6 +15,10 @@ from urllib.parse import urljoin
 from zoneinfo import ZoneInfo
 
 SOURCE = "https://bollnas.se/evenemang"
+ADDITIONAL_SOURCES = (
+    "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret",
+    "https://bollnas.se/uppleva-och-gora/bibliotek",
+)
 OUTPUT = Path(__file__).resolve().parent / "data" / "events.json"
 ZONE = ZoneInfo("Europe/Stockholm")
 MONTHS = {name: number for number, name in enumerate(
@@ -50,11 +54,13 @@ class CalendarParser(HTMLParser):
         self.heading_depth = 0
         self.li_depth = 0
         self.li_parts = []
+        self.description_parts = []
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
         if tag == "h2":
-            self.current = {"title": "", "lines": [], "url": SOURCE}
+            self.current = {"title": "", "lines": [], "url": SOURCE, "description": ""}
+            self.description_parts = []
             self.events.append(self.current)
             self.heading_depth += 1
         elif tag == "li" and self.current is not None:
@@ -73,6 +79,11 @@ class CalendarParser(HTMLParser):
             self.current["title"] += data
         if self.li_depth:
             self.li_parts.append(data)
+        elif not self.heading_depth:
+            self.description_parts.append(data)
+            if len(self.description_parts) > 2000:
+                self.description_parts = self.description_parts[-1000:]
+            self.current["description"] = clean(" ".join(self.description_parts))[:6000]
 
     def handle_endtag(self, tag):
         if tag == "h2":
@@ -85,8 +96,9 @@ class CalendarParser(HTMLParser):
                     self.current["lines"].append(line)
 
 
-def classify(title):
+def classify(title, description=""):
     lower = title.casefold()
+    details = description.casefold()
     # Public skating is a recreational activity, even when held in the bandy arena.
     if "allmänhetens åkning" in lower:
         return "Sport"
@@ -98,8 +110,14 @@ def classify(title):
         return "Musik"
     if any(term in lower for term in ("bingo", "företagarfrukost", "träffpunkt")):
         return "Övrigt"
-    if any(term in lower for term in ("föreställning", "ebenezer", "teater")):
+    if any(term in lower for term in ("föreställning", "teater")):
         return "Kultur"
+    if any(term in lower for term in ("ebenezer", "filmklubb", "biograf", "bio:", "filmvisning")):
+        return "Bio"
+    if any(term in details for term in ("filmen visas", "biografteatern")):
+        return "Bio"
+    if any(term in details for term in ("konsert", "livemusik", "musikföreställning")):
+        return "Musik"
     return next((category for term, category in CATEGORIES if term in lower), "Övrigt")
 
 
@@ -142,16 +160,30 @@ def parse_date(match):
 
 def collect(page=None, today=None):
     if page is None:
-        page = fetch(SOURCE)
-    parser = CalendarParser()
-    parser.feed(page)
-    print(f"Fetched {len(page)} characters; found {len(parser.events)} headings.", flush=True)
+        pages = [(SOURCE, page)] if page is not None else []
+    if page is None:
+        pages.append((SOURCE, fetch(SOURCE)))
+        for url in ADDITIONAL_SOURCES:
+            try:
+                pages.append((url, fetch(url)))
+            except (OSError, ValueError, UnicodeError) as error:
+                print(f"WARNING: optional event source unavailable: {url}: {error}", flush=True)
+    items = []
+    for url, markup in pages:
+        parser = CalendarParser()
+        parser.feed(markup)
+        for item in items:
+            if item["url"] == SOURCE:
+                item["url"] = url
+            items.append(item)
+        print(f"Fetched {len(markup)} characters from {url}; found {len(parser.events)} headings.", flush=True)
     today = today or dt.datetime.now(ZONE).date()
     last_day = today + dt.timedelta(days=13)
     found = []
 
     for item in parser.events:
         title = clean(item["title"])
+        description = item.get("description", "")
         if not title or len(title) > 180:
             continue
         date_line = next((line for line in item["lines"] if DATE_RE.search(line)), "")
@@ -190,9 +222,11 @@ def collect(page=None, today=None):
                 "time": start_time if time_match else "",
                 "end": f"{day.isoformat()}T{end_time}" if end_time else "",
                 "location": location,
-                "category": classify(title),
+                "category": classify(title, description),
+                "free": bool(re.search(r"\b(?:fri entré|fritt inträde|gratis|kostnadsfri\w*)\b", description, re.I)),
+                "family": bool(re.search(r"\b(?:för hela familjen|barnfamiljer|för barn|familjeföreställning|barnaktiviteter|från \d+ år)\b", description, re.I)),
                 "url": item["url"],
-                "source": SOURCE,
+                "source": item["url"] if item["url"] in ADDITIONAL_SOURCES else SOURCE,
             })
 
     # Add verified home games from club fixture calendars. They are maintained
@@ -228,7 +262,17 @@ def collect(page=None, today=None):
                 "source": game["url"],
             })
 
-    unique = {(e["title"], e["start"], e["location"]): e for e in found}
+    unique = {}
+    for event in found:
+        key = (clean(event["title"]).casefold(), event["date"], event["time"])
+        if key not in unique:
+            unique[key] = event
+        else:
+            prior = unique[key]
+            if not prior.get("location") and event.get("location"):
+                prior["location"] = event["location"]
+            prior["free"] = prior.get("free", False) or event.get("free", False)
+            prior["family"] = prior.get("family", False) or event.get("family", False)
     events = sorted(unique.values(), key=lambda e: (e["start"], e["title"]))
     print(f"Found {len(events)} dated events between {today} and {last_day}.", flush=True)
     if not events:
