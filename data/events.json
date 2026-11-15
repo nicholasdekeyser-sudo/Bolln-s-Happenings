@@ -18,7 +18,7 @@
       "date": "2026-11-15",
       "time": "13:30",
       "end": "2026-11-15T15:30",
-      "location": "",
+      "location": "Sävstaås IP",
       "category": "Sport",
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-09-allmanhetens-akning-savstaas-ip",
       "source": "https://bollnas.se/evenemang"
@@ -29,8 +29,8 @@
       "date": "2026-11-15",
       "time": "16:00",
       "end": "2026-11-15T17:15",
-      "location": "",
-      "category": "Övrigt",
+      "location": "Mo kyrka",
+      "category": "Musik",
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-10-02-mass-of-the-children-och-bon-till-solen---mo-kyrka",
       "source": "https://bollnas.se/evenemang"
     },
@@ -41,7 +41,7 @@
       "time": "19:00",
       "end": "2026-11-15T20:55",
       "location": "",
-      "category": "Övrigt",
+      "category": "Kultur",
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-ebenezer",
       "source": "https://bollnas.se/evenemang"
     },
@@ -62,7 +62,7 @@
       "date": "2026-11-16",
       "time": "11:00",
       "end": "2026-11-16T14:00",
-      "location": "",
+      "location": "Sävstaås IP",
       "category": "Sport",
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsavstaasip.5.2de5b8831a1587eab711e264.html",
       "source": "https://bollnas.se/evenemang"
@@ -73,7 +73,7 @@
       "date": "2026-11-16",
       "time": "18:00",
       "end": "2026-11-16T21:00",
-      "location": "",
+      "location": "Kulturhuset Bollnäs",
       "category": "Övrigt",
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/bingoikulturhuset.5.39cb05a61a0d6c86ab82abf6.html",
       "source": "https://bollnas.se/evenemang"
@@ -84,8 +84,8 @@
       "date": "2026-11-17",
       "time": "11:00",
       "end": "2026-11-17T14:30",
-      "location": "",
-      "category": "Bandy",
+      "location": "SBB Arena",
+      "category": "Sport",
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsbbarenabandyhallen.5.2de5b8831a1587eab711cef9.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -107,7 +107,7 @@
       "time": "19:30",
       "end": "2026-11-17T21:30",
       "location": "",
-      "category": "Övrigt",
+      "category": "Musik",
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-08-26-tilde-schweitzer-big-band",
       "source": "https://bollnas.se/evenemang"
     },
@@ -118,7 +118,7 @@
       "time": "15:00",
       "end": "2026-11-18T16:35",
       "location": "",
-      "category": "Övrigt",
+      "category": "Musik",
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/sjungformigarja.5.73e3f2281a1a183b6619ca29.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -129,7 +129,7 @@
       "time": "18:00",
       "end": "2026-11-18T19:00",
       "location": "",
-      "category": "Övrigt",
+      "category": "Musik",
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-04-bara-bach---med-bollnas-folkhogskola",
       "source": "https://bollnas.se/evenemang"
     },
@@ -140,7 +140,7 @@
       "time": "18:00",
       "end": "2026-11-18T19:35",
       "location": "",
-      "category": "Övrigt",
+      "category": "Musik",
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-sjung-for-mig-arja",
       "source": "https://bollnas.se/evenemang"
     },
@@ -150,7 +150,7 @@
       "date": "2026-11-19",
       "time": "07:30",
       "end": "2026-11-19T09:00",
-      "location": "",
+      "location": "Scandic",
       "category": "Övrigt",
       "url": "https://bollnas.se/arkiv/nyheter/foretagsevenemang/2025-12-11-foretagarfrukost-19-november---scandic",
       "source": "https://bollnas.se/evenemang"
@@ -161,7 +161,7 @@
       "date": "2026-11-19",
       "time": "11:00",
       "end": "2026-11-19T14:00",
-      "location": "",
+      "location": "Sävstaås IP",
       "category": "Sport",
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsavstaasip.5.2de5b8831a1587eab711e270.html",
       "source": "https://bollnas.se/evenemang"
@@ -172,7 +172,7 @@
       "date": "2026-11-19",
       "time": "12:20",
       "end": "2026-11-19T12:20",
-      "location": "",
+      "location": "Bollnästravet",
       "category": "Trav",
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-01-20-bollnastravet-lunchtrav",
       "source": "https://bollnas.se/evenemang"
@@ -183,7 +183,7 @@
       "date": "2026-11-19",
       "time": "13:00",
       "end": "2026-11-19T16:00",
-      "location": "",
+      "location": "Bollnäs konsthall",
       "category": "Kultur",
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-13-dino-deluxe-pa-bollnas-konsthall",
       "source": "https://bollnas.se/evenemang"
@@ -194,7 +194,7 @@
       "date": "2026-11-19",
       "time": "13:00",
       "end": "2026-11-19T14:30",
-      "location": "",
+      "location": "Kulturkvarteret",
       "category": "Övrigt",
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/traffpunktkulturkvarterettankenotter.5.1ea51c611a04240f3deed46d.html",
       "source": "https://bollnas.se/evenemang"
@@ -205,8 +205,8 @@
       "date": "2026-11-20",
       "time": "11:00",
       "end": "2026-11-20T14:30",
-      "location": "",
-      "category": "Bandy",
+      "location": "SBB Arena",
+      "category": "Sport",
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsbbarenabandyhallen.5.2de5b8831a1587eab711cf05.html",
       "source": "https://bollnas.se/evenemang"
     },
@@ -217,7 +217,7 @@
       "time": "19:00",
       "end": "2026-11-20T21:30",
       "location": "",
-      "category": "Övrigt",
+      "category": "Musik",
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-06-16-christmas-night",
       "source": "https://bollnas.se/evenemang"
     }
