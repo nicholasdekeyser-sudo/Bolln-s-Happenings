@@ -172,7 +172,7 @@ def collect(page=None, today=None):
     for url, markup in pages:
         parser = CalendarParser()
         parser.feed(markup)
-        for item in items:
+        for item in parser.events:
             if item["url"] == SOURCE:
                 item["url"] = url
             items.append(item)
@@ -181,7 +181,7 @@ def collect(page=None, today=None):
     last_day = today + dt.timedelta(days=13)
     found = []
 
-    for item in parser.events:
+    for item in items:
         title = clean(item["title"])
         description = item.get("description", "")
         if not title or len(title) > 180:
