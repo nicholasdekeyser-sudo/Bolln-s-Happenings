@@ -29,7 +29,7 @@ select,input{font:inherit;color:var(--ink);border:1px solid #cbd8d0;background:w
 .tag{background:#eef4f0;color:#27574c;border-radius:100px;padding:2px 9px;font-size:.77rem;font-weight:600}
 .event a{color:#075b49;text-underline-offset:3px;font-size:.91rem}
 .empty{background:white;border:1px solid var(--border);border-radius:12px;padding:24px}
-.footer-note{font-size:.9rem;color:var(--muted);margin-top:32px}
+.recurring{background:#fff;border:1px solid var(--border);border-radius:13px;padding:18px;margin-top:32px}.recurring h2{font-size:1.14rem;margin:0 0 9px}.recurring p{margin:7px 0;color:var(--muted)}.recurring a{color:#075b49}.footer-note{font-size:.9rem;color:var(--muted);margin-top:32px}
 .footer-note a{color:#075b49}
 footer{color:var(--muted);text-align:center;padding:20px;font-size:.85rem}
 @media(max-width:520px){main{padding:18px 14px 44px}.event{grid-template-columns:58px minmax(0,1fr);gap:10px;padding:14px}.event h3{font-size:1rem}.day{margin-top:24px}}
@@ -53,6 +53,13 @@ footer{color:var(--muted);text-align:center;padding:20px;font-size:.85rem}
 </div>
 <p id="status" role="status">Laddar evenemang…</p>
 <div id="events"></div>
+<section class="recurring" aria-labelledby="recurring-heading">
+<h2 id="recurring-heading">Återkommande aktivitet för nybörjare</h2>
+<strong>Prova-på-klättring – Bollnäs Klätterklubb</strong>
+<p>Höghammarhallen · Första måndagen i månaden, med sommaruppehåll · 60 kr/person inklusive utrustning.</p>
+<p>Exakt datum och klockslag för nästa tillfälle är inte bekräftat. Kontrollera med klubben före besök.</p>
+<a href="https://bollnasklatterklubb.se/startclimbing/prova%20p%C3%A5.html" target="_blank" rel="noopener noreferrer">Klubbens information om prova-på</a>
+</section>
 <p class="footer-note">Saknas något? <a href="https://github.com/nicholasdekeyser-sudo/Bolln-s-Happenings/issues/new" target="_blank" rel="noopener">Tipsa om ett evenemang</a>.</p>
 </main>
 <footer>Uppgifter kan ändras. Kontrollera alltid arrangörens webbplats.</footer>
