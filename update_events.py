@@ -163,8 +163,7 @@ def parse_date(match):
 
 
 def collect(page=None, today=None):
-    if page is None:
-        pages = [(SOURCE, page)] if page is not None else []
+    pages = [(SOURCE, page)] if page is not None else []
     if page is None:
         pages.append((SOURCE, fetch(SOURCE)))
         for url in ADDITIONAL_SOURCES:
