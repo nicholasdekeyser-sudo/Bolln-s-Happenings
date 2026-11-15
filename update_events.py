@@ -66,7 +66,6 @@ class CalendarParser(HTMLParser):
             self.events.append(self.current)
             self.heading_depth += 1
         elif tag == "li" and self.current is not None:
-            self.details_started = True
             if self.li_depth == 0:
                 self.li_parts = []
             self.li_depth += 1
@@ -82,7 +81,7 @@ class CalendarParser(HTMLParser):
             self.current["title"] += data
         if self.li_depth:
             self.li_parts.append(data)
-        elif not self.heading_depth and not self.details_started:
+        if not self.heading_depth and not self.details_started:
             self.description_parts.append(data)
             if len(self.description_parts) > 2000:
                 self.description_parts = self.description_parts[-1000:]
@@ -97,6 +96,8 @@ class CalendarParser(HTMLParser):
                 line = clean(" ".join(self.li_parts))
                 if line:
                     self.current["lines"].append(line)
+                    if DATE_RE.search(line):
+                        self.details_started = True
 
 
 def classify(title, description=""):
