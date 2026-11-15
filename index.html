@@ -80,6 +80,7 @@ footer{color:var(--muted);text-align:center;padding:20px;font-size:.85rem}
 <p class="note">Aktiviteterna nedan är tips, inte garanterade öppna evenemang. Kontrollera tider, bokning och pris hos arrangören. Närområdet kan även omfatta Järvsö.</p>
 <p id="activityStatus" role="status">Laddar aktiviteter…</p>
 <div id="activities" class="activity-grid"></div>
+<details class="foot"><summary>Se informationskällor och föreningar vi bevakar</summary><ul id="sources"></ul></details>
 </section>
 <p class="foot">Saknas något? <a href="https://github.com/nicholasdekeyser-sudo/Bolln-s-Happenings/issues/new" target="_blank" rel="noopener noreferrer">Tipsa om ett evenemang eller en aktivitet</a>.</p>
 </main>
@@ -183,7 +184,7 @@ Promise.allSettled([
 ]).then(([a,b])=>{
   if(a.status==="fulfilled"){events=Array.isArray(a.value.events)?a.value.events:[];updated=a.value.updated||""}
   else $("status").textContent="Kunde inte läsa evenemangen just nu.";
-  if(b.status==="fulfilled"){activities=Array.isArray(b.value.activities)?b.value.activities:[];const areas=[...new Set(activities.map(x=>x.area).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"sv"));for(const name of areas){const option=document.createElement("option");option.value=name;option.textContent=name;area.append(option)}}
+  if(b.status==="fulfilled"){activities=Array.isArray(b.value.activities)?b.value.activities:[];const areas=[...new Set(activities.map(x=>x.area).filter(Boolean))].sort((a,b)=>a.localeCompare(b,"sv"));for(const name of areas){const option=document.createElement("option");option.value=name;option.textContent=name;area.append(option)}for(const source of (b.value.sources||[])){const li=document.createElement("li");const link=document.createElement("a");link.href=source.url;link.target="_blank";link.rel="noopener noreferrer";link.textContent=source.title;li.append(link,document.createTextNode(" – "+source.coverage+(source.auto?" (automatisk kontroll)":" (information och tips)")));$("sources").append(li)}}
   else $("activityStatus").textContent="Kunde inte läsa aktiviteterna just nu.";
   render();
 });
