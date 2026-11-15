@@ -195,6 +195,39 @@ def collect(page=None, today=None):
                 "source": SOURCE,
             })
 
+    # Add verified home games from club fixture calendars. They are maintained
+    # separately, so they can be checked against the official schedule.
+    fixture_file = Path(__file__).resolve().parent / "data" / "sports_fixtures.json"
+    if fixture_file.exists():
+        sports = json.loads(fixture_file.read_text(encoding="utf-8")).get("fixtures", [])
+        for game in sports:
+            try:
+                game_day = dt.date.fromisoformat(game["date"])
+                start_time = game["time"]
+                dt.time.fromisoformat(start_time)
+            except (KeyError, ValueError, TypeError):
+                continue
+            if not today <= game_day <= last_day:
+                continue
+            # Prefer explicit club fixture over a less detailed municipality
+            # listing for the same sport, day and home team.
+            if game["category"] == "Bandy":
+                found = [e for e in found if not (
+                    e["date"] == game["date"] and e["category"] == "Bandy"
+                    and ("bollnäs" in e["title"].casefold())
+                )]
+            found.append({
+                "title": game["title"],
+                "start": game["date"] + "T" + start_time,
+                "date": game["date"],
+                "time": start_time,
+                "end": "",
+                "location": game["location"],
+                "category": game["category"],
+                "url": game["url"],
+                "source": game["url"],
+            })
+
     unique = {(e["title"], e["start"], e["location"]): e for e in found}
     events = sorted(unique.values(), key=lambda e: (e["start"], e["title"]))
     print(f"Found {len(events)} dated events between {today} and {last_day}.", flush=True)
