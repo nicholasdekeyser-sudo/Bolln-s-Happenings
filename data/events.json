@@ -1,58 +1,6 @@
 {
-  "updated": "2026-11-15T13:34:34+01:00",
+  "updated": "2026-11-16T14:26:30+01:00",
   "events": [
-    {
-      "title": "Amaryllisutställning 2026 – En bal på slottet",
-      "start": "2026-11-15T11:00",
-      "date": "2026-11-15",
-      "time": "11:00",
-      "end": "2026-11-15T16:00",
-      "location": "",
-      "category": "Kultur",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/amaryllisutstallning2026enbalpaslottet.5.b2f02461a162fecb7aa94d0.html",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Allmänhetens åkning Sävstaås IP",
-      "start": "2026-11-15T13:30",
-      "date": "2026-11-15",
-      "time": "13:30",
-      "end": "2026-11-15T15:30",
-      "location": "Sävstaås IP",
-      "category": "Sport",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-09-allmanhetens-akning-savstaas-ip",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Mass of the Children och Bön till solen - Mo Kyrka",
-      "start": "2026-11-15T16:00",
-      "date": "2026-11-15",
-      "time": "16:00",
-      "end": "2026-11-15T17:15",
-      "location": "Mo kyrka",
-      "category": "Musik",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-10-02-mass-of-the-children-och-bon-till-solen---mo-kyrka",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Ebenezer",
-      "start": "2026-11-15T19:00",
-      "date": "2026-11-15",
-      "time": "19:00",
-      "end": "2026-11-15T20:55",
-      "location": "",
-      "category": "Bio",
-      "free": false,
-      "family": true,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-ebenezer",
-      "source": "https://bollnas.se/evenemang"
-    },
     {
       "title": "Amaryllisutställning 2026 – En bal på slottet",
       "start": "2026-11-16T10:00",
@@ -64,19 +12,6 @@
       "free": false,
       "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/amaryllisutstallning2026enbalpaslottet.5.b2f02461a162fecb7aa94e9.html",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Allmänhetens åkning Sävstaås IP",
-      "start": "2026-11-16T11:00",
-      "date": "2026-11-16",
-      "time": "11:00",
-      "end": "2026-11-16T14:00",
-      "location": "Sävstaås IP",
-      "category": "Sport",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsavstaasip.5.2de5b8831a1587eab711e264.html",
       "source": "https://bollnas.se/evenemang"
     },
     {
@@ -234,6 +169,19 @@
       "source": "https://bollnas.se/evenemang"
     },
     {
+      "title": "Café Planet - Fritidsbanken",
+      "start": "2026-11-19T18:30",
+      "date": "2026-11-19",
+      "time": "18:30",
+      "end": "2026-11-19T20:00",
+      "location": "",
+      "category": "Övrigt",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-16-cafe-planet---fritidsbanken",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
       "title": "Allmänhetens åkning SBB Arena (bandyhallen)",
       "start": "2026-11-20T11:00",
       "date": "2026-11-20",
@@ -258,6 +206,19 @@
       "source": "https://www.bollnasbandy.se/herrmatcher"
     },
     {
+      "title": "Bollnäs IS - Ockelbo HC",
+      "start": "2026-11-20T19:00",
+      "date": "2026-11-20",
+      "time": "19:00",
+      "end": "2026-11-20T21:00",
+      "location": "",
+      "category": "Övrigt",
+      "free": true,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/bollnasisockelbohc.5.64e05b8e1a068807f8e7582c.html",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
       "title": "Christmas Night",
       "start": "2026-11-20T19:00",
       "date": "2026-11-20",
@@ -280,6 +241,32 @@
       "category": "Hockey",
       "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher",
       "source": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
+    },
+    {
+      "title": "The Hunger Games: Sunrise on the reaping",
+      "start": "2026-11-20T19:00",
+      "date": "2026-11-20",
+      "time": "19:00",
+      "end": "2026-11-20T21:38",
+      "location": "",
+      "category": "Bio",
+      "free": false,
+      "family": true,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-the-hunger-games-sunrise-on-the-reaping",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Bandykul i SBB- Arena",
+      "start": "2026-11-21T09:30",
+      "date": "2026-11-21",
+      "time": "09:30",
+      "end": "2026-11-21T10:30",
+      "location": "",
+      "category": "Bandy",
+      "free": false,
+      "family": true,
+      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/bandykulisbbarena.5.dedd4261a115a113768cd75.html",
+      "source": "https://bollnas.se/evenemang"
     },
     {
       "title": "Dino Deluxe på Bollnäs konsthall",
