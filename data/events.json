@@ -1,45 +1,6 @@
 {
-  "updated": "2026-11-16T14:26:30+01:00",
+  "updated": "2026-11-17T15:12:30+01:00",
   "events": [
-    {
-      "title": "Amaryllisutställning 2026 – En bal på slottet",
-      "start": "2026-11-16T10:00",
-      "date": "2026-11-16",
-      "time": "10:00",
-      "end": "2026-11-16T18:00",
-      "location": "",
-      "category": "Kultur",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/amaryllisutstallning2026enbalpaslottet.5.b2f02461a162fecb7aa94e9.html",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Bingo i Kulturhuset",
-      "start": "2026-11-16T18:00",
-      "date": "2026-11-16",
-      "time": "18:00",
-      "end": "2026-11-16T21:00",
-      "location": "Kulturhuset Bollnäs",
-      "category": "Övrigt",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/bingoikulturhuset.5.39cb05a61a0d6c86ab82abf6.html",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Allmänhetens åkning SBB Arena (bandyhallen)",
-      "start": "2026-11-17T11:00",
-      "date": "2026-11-17",
-      "time": "11:00",
-      "end": "2026-11-17T14:30",
-      "location": "SBB Arena",
-      "category": "Sport",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsbbarenabandyhallen.5.2de5b8831a1587eab711cef9.html",
-      "source": "https://bollnas.se/evenemang"
-    },
     {
       "title": "Bandy: Bollnäs GIF – Villa Lidköping",
       "start": "2026-11-17T19:00",
@@ -269,6 +230,32 @@
       "source": "https://bollnas.se/evenemang"
     },
     {
+      "title": "Amaryllisutställning 2026 – En bal på slottet",
+      "start": "2026-11-21T10:00",
+      "date": "2026-11-21",
+      "time": "10:00",
+      "end": "2026-11-21T16:00",
+      "location": "",
+      "category": "Kultur",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/amaryllisutstallning2026enbalpaslottet.5.b2f02461a162fecb7aa9e2c.html",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Luffarslöjd",
+      "start": "2026-11-21T10:00",
+      "date": "2026-11-21",
+      "time": "10:00",
+      "end": "2026-11-21T16:00",
+      "location": "",
+      "category": "Övrigt",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-10-21-luffarslojd",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
       "title": "Dino Deluxe på Bollnäs konsthall",
       "start": "2026-11-21T11:00",
       "date": "2026-11-21",
@@ -305,6 +292,19 @@
       "free": false,
       "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-bollnaspennan-maria-stromback-svard",
+      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
+    },
+    {
+      "title": "Bingo i Kulturhuset",
+      "start": "2026-11-23T18:00",
+      "date": "2026-11-23",
+      "time": "18:00",
+      "end": "2026-11-23T21:00",
+      "location": "Kulturhuset Bollnäs",
+      "category": "Övrigt",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-09-28-bingo-i-kulturhuset",
       "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
     },
     {
