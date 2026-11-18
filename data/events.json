@@ -1,30 +1,6 @@
 {
-  "updated": "2026-11-17T15:12:30+01:00",
+  "updated": "2026-11-18T14:43:34+01:00",
   "events": [
-    {
-      "title": "Bandy: Bollnäs GIF – Villa Lidköping",
-      "start": "2026-11-17T19:00",
-      "date": "2026-11-17",
-      "time": "19:00",
-      "end": "",
-      "location": "SBB Arena",
-      "category": "Bandy",
-      "url": "https://www.bollnasbandy.se/herrmatcher",
-      "source": "https://www.bollnasbandy.se/herrmatcher"
-    },
-    {
-      "title": "Tilde Schweitzer Big Band",
-      "start": "2026-11-17T19:30",
-      "date": "2026-11-17",
-      "time": "19:30",
-      "end": "2026-11-17T21:30",
-      "location": "",
-      "category": "Musik",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-08-26-tilde-schweitzer-big-band",
-      "source": "https://bollnas.se/evenemang"
-    },
     {
       "title": "Sjung för mig Arja",
       "start": "2026-11-18T15:00",
@@ -243,6 +219,19 @@
       "source": "https://bollnas.se/evenemang"
     },
     {
+      "title": "Julmarknad på Hertsjögården",
+      "start": "2026-11-21T10:00",
+      "date": "2026-11-21",
+      "time": "10:00",
+      "end": "2026-11-21T16:00",
+      "location": "",
+      "category": "Marknad",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-10-19-julmarknad-pa-hertsjogarden",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
       "title": "Luffarslöjd",
       "start": "2026-11-21T10:00",
       "date": "2026-11-21",
@@ -267,6 +256,19 @@
       "family": false,
       "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/dinodeluxepabollnaskonsthall.5.29f51cd61a1ce60e31518509.html",
       "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
+    },
+    {
+      "title": "Julmarknad i Hårga",
+      "start": "2026-11-21T11:00",
+      "date": "2026-11-21",
+      "time": "11:00",
+      "end": "2026-11-21T15:00",
+      "location": "",
+      "category": "Marknad",
+      "free": false,
+      "family": true,
+      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/julmarknadiharga.5.4ed046511a18c407b744771d.html",
+      "source": "https://bollnas.se/evenemang"
     },
     {
       "title": "En kväll att minnas med - Sten & Stanley",
