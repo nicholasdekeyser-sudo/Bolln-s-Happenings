@@ -1,136 +1,6 @@
 {
-  "updated": "2026-11-18T14:43:34+01:00",
+  "updated": "2026-11-20T14:54:14+01:00",
   "events": [
-    {
-      "title": "Sjung för mig Arja",
-      "start": "2026-11-18T15:00",
-      "date": "2026-11-18",
-      "time": "15:00",
-      "end": "2026-11-18T16:35",
-      "location": "",
-      "category": "Musik",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/sjungformigarja.5.73e3f2281a1a183b6619ca29.html",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Bara Bach - med Bollnäs folkhögskola",
-      "start": "2026-11-18T18:00",
-      "date": "2026-11-18",
-      "time": "18:00",
-      "end": "2026-11-18T19:00",
-      "location": "",
-      "category": "Musik",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-04-bara-bach---med-bollnas-folkhogskola",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Sjung för mig Arja",
-      "start": "2026-11-18T18:00",
-      "date": "2026-11-18",
-      "time": "18:00",
-      "end": "2026-11-18T19:35",
-      "location": "",
-      "category": "Musik",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-sjung-for-mig-arja",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Företagarfrukost 19 november - Scandic",
-      "start": "2026-11-19T07:30",
-      "date": "2026-11-19",
-      "time": "07:30",
-      "end": "2026-11-19T09:00",
-      "location": "Scandic",
-      "category": "Övrigt",
-      "free": true,
-      "family": false,
-      "url": "https://bollnas.se/arkiv/nyheter/foretagsevenemang/2025-12-11-foretagarfrukost-19-november---scandic",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Allmänhetens åkning Sävstaås IP",
-      "start": "2026-11-19T11:00",
-      "date": "2026-11-19",
-      "time": "11:00",
-      "end": "2026-11-19T14:00",
-      "location": "Sävstaås IP",
-      "category": "Sport",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsavstaasip.5.2de5b8831a1587eab711e270.html",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Bollnästravet: Lunchtrav",
-      "start": "2026-11-19T12:20",
-      "date": "2026-11-19",
-      "time": "12:20",
-      "end": "2026-11-19T12:20",
-      "location": "Bollnästravet",
-      "category": "Trav",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-01-20-bollnastravet-lunchtrav",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Dino Deluxe på Bollnäs konsthall",
-      "start": "2026-11-19T13:00",
-      "date": "2026-11-19",
-      "time": "13:00",
-      "end": "2026-11-19T16:00",
-      "location": "Bollnäs konsthall",
-      "category": "Kultur",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-13-dino-deluxe-pa-bollnas-konsthall",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Träffpunkt Kulturkvarteret: Tankenötter",
-      "start": "2026-11-19T13:00",
-      "date": "2026-11-19",
-      "time": "13:00",
-      "end": "2026-11-19T14:30",
-      "location": "Kulturkvarteret",
-      "category": "Övrigt",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/traffpunktkulturkvarterettankenotter.5.1ea51c611a04240f3deed46d.html",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Café Planet - Fritidsbanken",
-      "start": "2026-11-19T18:30",
-      "date": "2026-11-19",
-      "time": "18:30",
-      "end": "2026-11-19T20:00",
-      "location": "",
-      "category": "Övrigt",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-16-cafe-planet---fritidsbanken",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Allmänhetens åkning SBB Arena (bandyhallen)",
-      "start": "2026-11-20T11:00",
-      "date": "2026-11-20",
-      "time": "11:00",
-      "end": "2026-11-20T14:30",
-      "location": "SBB Arena",
-      "category": "Sport",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsbbarenabandyhallen.5.2de5b8831a1587eab711cf05.html",
-      "source": "https://bollnas.se/evenemang"
-    },
     {
       "title": "Bandy: Bollnäs GIF – Sandvikens AIK",
       "start": "2026-11-20T19:00",
@@ -245,6 +115,19 @@
       "source": "https://bollnas.se/evenemang"
     },
     {
+      "title": "Allmänhetens åkning SBB Arena (bandyhallen)",
+      "start": "2026-11-21T11:00",
+      "date": "2026-11-21",
+      "time": "11:00",
+      "end": "2026-11-21T14:00",
+      "location": "SBB Arena",
+      "category": "Sport",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-20-allmanhetens-akning-sbb-arena-bandyhallen",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
       "title": "Dino Deluxe på Bollnäs konsthall",
       "start": "2026-11-21T11:00",
       "date": "2026-11-21",
@@ -254,8 +137,21 @@
       "category": "Kultur",
       "free": false,
       "family": false,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/dinodeluxepabollnaskonsthall.5.29f51cd61a1ce60e31518509.html",
-      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-13-dino-deluxe-pa-bollnas-konsthall",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Julmarknad hos Västerbackens bygdegård",
+      "start": "2026-11-21T11:00",
+      "date": "2026-11-21",
+      "time": "11:00",
+      "end": "2026-11-21T15:00",
+      "location": "",
+      "category": "Marknad",
+      "free": false,
+      "family": true,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-10-julmarknad-hos-vasterbackens-bygdegard",
+      "source": "https://bollnas.se/evenemang"
     },
     {
       "title": "Julmarknad i Hårga",
@@ -271,6 +167,84 @@
       "source": "https://bollnas.se/evenemang"
     },
     {
+      "title": "Julmarknad på Gårdstunet",
+      "start": "2026-11-21T12:00",
+      "date": "2026-11-21",
+      "time": "12:00",
+      "end": "2026-11-21T16:00",
+      "location": "",
+      "category": "Marknad",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-10-23-julmarknad-pa-gardstunet",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Café Romantik i Kilafors Biografteater",
+      "start": "2026-11-21T15:00",
+      "date": "2026-11-21",
+      "time": "15:00",
+      "end": "2026-11-21T17:00",
+      "location": "",
+      "category": "Kultur",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-12-cafe-romantik-i-kilafors-biografteater",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Amaryllisutställning 2026 – En bal på slottet",
+      "start": "2026-11-22T11:00",
+      "date": "2026-11-22",
+      "time": "11:00",
+      "end": "2026-11-22T16:00",
+      "location": "",
+      "category": "Kultur",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/amaryllisutstallning2026enbalpaslottet.5.b2f02461a162fecb7aa9d2c.html",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Julmarknad i Hårga",
+      "start": "2026-11-22T11:00",
+      "date": "2026-11-22",
+      "time": "11:00",
+      "end": "2026-11-22T15:00",
+      "location": "",
+      "category": "Marknad",
+      "free": false,
+      "family": true,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-03-julmarknad-i-harga",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Slöjdsöndag",
+      "start": "2026-11-22T13:00",
+      "date": "2026-11-22",
+      "time": "13:00",
+      "end": "2026-11-22T16:00",
+      "location": "",
+      "category": "Övrigt",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-10-21-slojdsondag",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Arne Goes to Space",
+      "start": "2026-11-22T15:00",
+      "date": "2026-11-22",
+      "time": "15:00",
+      "end": "2026-11-22T16:42",
+      "location": "",
+      "category": "Bio",
+      "free": false,
+      "family": true,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-arne-goes-to-space",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
       "title": "En kväll att minnas med - Sten & Stanley",
       "start": "2026-11-22T18:00",
       "date": "2026-11-22",
@@ -281,7 +255,7 @@
       "free": false,
       "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-02-24-en-kvall-att-minnas-med---sten--stanley",
-      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
+      "source": "https://bollnas.se/evenemang"
     },
     {
       "title": "Bollnäspennan: Maria Strömbäck Svärd",
@@ -307,6 +281,32 @@
       "free": false,
       "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-09-28-bingo-i-kulturhuset",
+      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
+    },
+    {
+      "title": "Dino Deluxe på Bollnäs konsthall",
+      "start": "2026-11-26T13:00",
+      "date": "2026-11-26",
+      "time": "13:00",
+      "end": "2026-11-26T16:00",
+      "location": "Bollnäs konsthall",
+      "category": "Kultur",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-18-dino-deluxe-pa-bollnas-konsthall",
+      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
+    },
+    {
+      "title": "Träffpunkt Kulturkvarteret",
+      "start": "2026-11-26T13:00",
+      "date": "2026-11-26",
+      "time": "13:00",
+      "end": "2026-11-26T14:30",
+      "location": "Kulturkvarteret",
+      "category": "Övrigt",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-09-04-traffpunkt-kulturkvarteret",
       "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
     },
     {
