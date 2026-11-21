@@ -1,80 +1,6 @@
 {
-  "updated": "2026-11-20T14:54:14+01:00",
+  "updated": "2026-11-21T14:17:25+01:00",
   "events": [
-    {
-      "title": "Bandy: Bollnäs GIF – Sandvikens AIK",
-      "start": "2026-11-20T19:00",
-      "date": "2026-11-20",
-      "time": "19:00",
-      "end": "",
-      "location": "SBB Arena",
-      "category": "Bandy",
-      "url": "https://www.bollnasbandy.se/herrmatcher",
-      "source": "https://www.bollnasbandy.se/herrmatcher"
-    },
-    {
-      "title": "Bollnäs IS - Ockelbo HC",
-      "start": "2026-11-20T19:00",
-      "date": "2026-11-20",
-      "time": "19:00",
-      "end": "2026-11-20T21:00",
-      "location": "",
-      "category": "Övrigt",
-      "free": true,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/bollnasisockelbohc.5.64e05b8e1a068807f8e7582c.html",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Christmas Night",
-      "start": "2026-11-20T19:00",
-      "date": "2026-11-20",
-      "time": "19:00",
-      "end": "2026-11-20T21:30",
-      "location": "",
-      "category": "Musik",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-06-16-christmas-night",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Hockey: Bollnäs IS – Ockelbo HC",
-      "start": "2026-11-20T19:00",
-      "date": "2026-11-20",
-      "time": "19:00",
-      "end": "",
-      "location": "Bollnäs Ishall",
-      "category": "Hockey",
-      "url": "https://www.bollnashockey.se/bollnasis-a-lag/matcher",
-      "source": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
-    },
-    {
-      "title": "The Hunger Games: Sunrise on the reaping",
-      "start": "2026-11-20T19:00",
-      "date": "2026-11-20",
-      "time": "19:00",
-      "end": "2026-11-20T21:38",
-      "location": "",
-      "category": "Bio",
-      "free": false,
-      "family": true,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-the-hunger-games-sunrise-on-the-reaping",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Bandykul i SBB- Arena",
-      "start": "2026-11-21T09:30",
-      "date": "2026-11-21",
-      "time": "09:30",
-      "end": "2026-11-21T10:30",
-      "location": "",
-      "category": "Bandy",
-      "free": false,
-      "family": true,
-      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/bandykulisbbarena.5.dedd4261a115a113768cd75.html",
-      "source": "https://bollnas.se/evenemang"
-    },
     {
       "title": "Amaryllisutställning 2026 – En bal på slottet",
       "start": "2026-11-21T10:00",
@@ -112,32 +38,6 @@
       "free": false,
       "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-10-21-luffarslojd",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Allmänhetens åkning SBB Arena (bandyhallen)",
-      "start": "2026-11-21T11:00",
-      "date": "2026-11-21",
-      "time": "11:00",
-      "end": "2026-11-21T14:00",
-      "location": "SBB Arena",
-      "category": "Sport",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-20-allmanhetens-akning-sbb-arena-bandyhallen",
-      "source": "https://bollnas.se/evenemang"
-    },
-    {
-      "title": "Dino Deluxe på Bollnäs konsthall",
-      "start": "2026-11-21T11:00",
-      "date": "2026-11-21",
-      "time": "11:00",
-      "end": "2026-11-21T14:00",
-      "location": "Bollnäs konsthall",
-      "category": "Kultur",
-      "free": false,
-      "family": false,
-      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-13-dino-deluxe-pa-bollnas-konsthall",
       "source": "https://bollnas.se/evenemang"
     },
     {
@@ -258,6 +158,45 @@
       "source": "https://bollnas.se/evenemang"
     },
     {
+      "title": "The Hunger Games: Sunrise on the reaping",
+      "start": "2026-11-22T19:00",
+      "date": "2026-11-22",
+      "time": "19:00",
+      "end": "2026-11-22T21:38",
+      "location": "",
+      "category": "Bio",
+      "free": false,
+      "family": true,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-the-hunger-games-sunrise-on-the-reaping",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Amaryllisutställning 2026 – En bal på slottet",
+      "start": "2026-11-23T10:00",
+      "date": "2026-11-23",
+      "time": "10:00",
+      "end": "2026-11-23T18:00",
+      "location": "",
+      "category": "Kultur",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/amaryllisutstallning2026enbalpaslottet.5.b2f02461a162fecb7aa954c.html",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Allmänhetens åkning Sävstaås IP",
+      "start": "2026-11-23T11:00",
+      "date": "2026-11-23",
+      "time": "11:00",
+      "end": "2026-11-23T14:00",
+      "location": "Sävstaås IP",
+      "category": "Sport",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/allmanhetensakningsavstaasip.5.2de5b8831a1587eab711e27c.html",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
       "title": "Bollnäspennan: Maria Strömbäck Svärd",
       "start": "2026-11-23T17:30",
       "date": "2026-11-23",
@@ -268,7 +207,7 @@
       "free": false,
       "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-11-bollnaspennan-maria-stromback-svard",
-      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
+      "source": "https://bollnas.se/evenemang"
     },
     {
       "title": "Bingo i Kulturhuset",
@@ -281,7 +220,46 @@
       "free": false,
       "family": false,
       "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-09-28-bingo-i-kulturhuset",
-      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Inspirationsföreläsning med Jonas Hagström - 24 november",
+      "start": "2026-11-24T18:00",
+      "date": "2026-11-24",
+      "time": "18:00",
+      "end": "2026-11-24T20:00",
+      "location": "",
+      "category": "Övrigt",
+      "free": true,
+      "family": false,
+      "url": "https://bollnas.se/arkiv/nyheter/foretagsevenemang/2026-05-13-inspirationsforelasning-med-jonas-hagstrom---24-november",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Bollnäs genom tiderna",
+      "start": "2026-11-24T18:30",
+      "date": "2026-11-24",
+      "time": "18:30",
+      "end": "2026-11-24T21:00",
+      "location": "",
+      "category": "Övrigt",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-11-04-bollnas-genom-tiderna",
+      "source": "https://bollnas.se/evenemang"
+    },
+    {
+      "title": "Jul i Hå",
+      "start": "2026-11-25T11:00",
+      "date": "2026-11-25",
+      "time": "11:00",
+      "end": "2026-11-25T19:00",
+      "location": "",
+      "category": "Övrigt",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplevbollnas/evenemang/evenemang/juliha.5.73e3f2281a1a183b661371.html",
+      "source": "https://bollnas.se/evenemang"
     },
     {
       "title": "Dino Deluxe på Bollnäs konsthall",
@@ -310,6 +288,19 @@
       "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
     },
     {
+      "title": "Yttling Jazz",
+      "start": "2026-11-26T19:00",
+      "date": "2026-11-26",
+      "time": "19:00",
+      "end": "2026-11-26T21:30",
+      "location": "",
+      "category": "Musik",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-03-27-yttling-jazz",
+      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
+    },
+    {
       "title": "Hockey: Bollnäs IS – Malungs IF",
       "start": "2026-11-27T19:00",
       "date": "2026-11-27",
@@ -321,10 +312,34 @@
       "source": "https://www.bollnashockey.se/bollnasis-a-lag/matcher"
     },
     {
+      "title": "Stad i Ljus - Ett musikaliskt möte med Py Bäckman",
+      "start": "2026-11-27T19:30",
+      "date": "2026-11-27",
+      "time": "19:30",
+      "end": "2026-11-27T21:30",
+      "location": "",
+      "category": "Musik",
+      "free": false,
+      "family": false,
+      "url": "https://bollnas.se/turism/upplev-bollnas/evenemang/evenemang/2026-04-01-stad-i-ljus---ett-musikaliskt-mote-med-py-backman",
+      "source": "https://bollnas.se/uppleva-och-gora/kultur/kulturkvarteret-bollnas/evenemang-i-kulturkvarteret"
+    },
+    {
       "title": "Bandy: Bollnäs GIF – IK Sirius",
       "start": "2026-11-27T20:15",
       "date": "2026-11-27",
       "time": "20:15",
+      "end": "",
+      "location": "SBB Arena",
+      "category": "Bandy",
+      "url": "https://www.bollnasbandy.se/herrmatcher",
+      "source": "https://www.bollnasbandy.se/herrmatcher"
+    },
+    {
+      "title": "Bandy: Bollnäs GIF – Broberg/Söderhamn",
+      "start": "2026-12-04T20:00",
+      "date": "2026-12-04",
+      "time": "20:00",
       "end": "",
       "location": "SBB Arena",
       "category": "Bandy",
